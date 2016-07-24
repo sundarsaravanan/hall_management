@@ -1,0 +1,153 @@
+html {
+	font-family: Verdana, Geneva, sans-serif;
+}
+h1 {
+	font-size: 24px;
+	text-align: center;
+}
+#wrapper {
+	position: absolute;
+	width: 100%;
+	top: 10%;
+	margin-top: -50px;/* half of #content height*/
+}
+#form {
+	margin: auto;
+	width: 200px;
+	height: 100px;
+}
+
+body{
+    background-color: #DCD9D9;
+
+}
+
+.container{
+    height :auto;
+    width:auto;
+    margin-left:30px;
+    margin-top:100px;
+   
+}
+
+#box1 {
+    background-color:white;
+    width:150px;
+    height:100px;
+    margin-right:5px;
+    margin-left:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:solid black 2px;
+    border-radius: 15px;
+}
+
+#box {
+    background-color:white;
+    width:150px;
+    height:100px;
+    margin-right:5px;
+    margin-left:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:solid black 2px;
+    border-radius: 15px;
+}
+
+#red{
+    background-color:#F8786F;
+    width:150px;
+    height:100px;
+    margin-right:5px;
+    margin-left:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:solid black 2px;
+    border-radius: 15px;
+}
+
+#green{
+    background-color:#BFFCB4;
+    width:150px;
+    height:100px;
+    margin-right:5px;
+    margin-left:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:solid black 2px;
+    border-radius: 15px;
+}
+
+a1{
+       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+       font-weight: 900;
+       font-size:20px;
+}
+
+
+a2{
+    	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+        font-weight: 900;
+        font-size:12px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+a3{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+       font-weight: 900;
+
+       font-size: 24px;
+	text-align: center;
+}
+
+#textbox,#textbox1,#textbox2,#textbox3,#textbox4,#textbox5
+{
+
+color: #000000;
+width: 150px;
+padding: 6px 15px 6px 15px;
+border-radius: 8px;
+transition:500ms all ease;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+
+
+.button{
+	background: #FEDA71;
+	padding:8px 18px;
+	color:#623F1D;
+	font-family:'Helvetica Neue',sans-serif;
+	font-size:16px;
+    font-weight: 600;
+	border-radius:10px;
+	border:1px solid #623F1D;
+    margin-top:10px;
+    display:inline;
+}         
+
+h2{
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+#found h6{
+   color:red;
+}
+
+#hid h6{
+   color:red;
+}
+
+#hid1 h6{
+   color:red;
+}
+#log_out{
+    float:right;
+    margin-right:40px;
+    margin-top: 40px;
+}

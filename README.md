@@ -1,1 +1,1 @@
-<h1>Hall Managment</h1>
+<h1>Hall Management</h1>

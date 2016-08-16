@@ -1,6 +1,6 @@
 # Hall Management 
 
-Our depatrment has three projector halls . So the faculty can use them for lecture presentations.
+Our department has three projector halls . So the faculty can use them for lecture presentations.
 
 There arose a problem while utilising them.So they decided to allocate the halls on first come first serve basis.
 

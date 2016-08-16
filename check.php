@@ -6,12 +6,12 @@ if (isset($_SESSION['id'])) {
     $usname = $_SESSION['username'];
 	$date=$_SESSION['date'];
 	include_once("dbconnect.php");
-	
+
 	$result = "SELECT date FROM class";
 	$result = mysqli_query($dbCon,$result);
 	$storeArray = Array();
 	while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
-    $storeArray[] =  $row['date'];  
+    $storeArray[] =  $row['date'];
 	}
 	$j=count($storeArray);
 	for($i=0;$i<=$j;$i++)
@@ -22,9 +22,9 @@ if (isset($_SESSION['id'])) {
 	}
 	else{
 		$flag=1;
-	}	
 	}
-	
+	}
+
 	if($flag==0){
 	    	header("Location: table.php");
 	}
@@ -36,13 +36,13 @@ if (isset($_SESSION['id'])) {
 	$query = mysqli_query($dbCon, $sql2);
 	$query = mysqli_query($dbCon, $sql3);
 	header("Location: table.php");
-	}	
-	
-	
-	
-	
+	}
 
-	
+
+
+
+
+
 	}
 	else {
     header("Location: index.php");

@@ -5,96 +5,155 @@ if (isset($_SESSION['id1'])) {
     $usname = $_SESSION['username1'];
 }
 else{
-	 header("Location: staff_per.php"); 
+	 header("Location: staff_per.php");
 }
 if (!empty($_POST["username2"])  && !empty($_POST["password2"]) && !empty($_POST["password3"])) {
     $username2 = strip_tags($_POST['username2']);
 	$pass2 = strip_tags($_POST['password2']);
-	$pass3 = strip_tags($_POST['password3']);	
+	$pass3 = strip_tags($_POST['password3']);
     $fullname=strip_tags($_POST['name1']);
-	
+
 	if ($pass2==$pass3) {
 		$_SESSION['username2'] = $username2;
 		$_SESSION['pass2'] = $pass2;
-        $_SESSION['fullname']=$fullname;	
-		header("Location: confirmation.php");
+        $_SESSION['fullname']=$fullname;
+		header("Location: index.php");
+    session_destroy();
+
 	} else {
 		echo "<h2>The Password do not match</h2>
 		<br /> Please try again.</h2>";
 	}
-	
+
 }
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>LOGIN</title>
-<link href="custom.css" rel="stylesheet" />
-<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
-</head>
- 
-<body>
-<div id="wrapper">
-        <img src="logo.png"  width="100%"/>
+	<head>
+		<title>Kcet-Login</title>
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<link rel="stylesheet" type="text/css" href="for_index.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-<input type="button" onclick="log_out()" value="LOGOUT" id="log_out"/><BR><BR>
-</form>
-<h3><center><bR> REGISTRATION FORM <BR><BR><center> </h3>
-<form id="form" action="register.php" method="post" enctype="multipart/form-data">
-<center><div id="hid"></div>
-<center><input id="textbox5" type="text" name="name1" placeholder="Full Name" /> <br />
-<input id="textbox2" type="text" name="username2" placeholder="Username" onBlur="check(document.getElementById('textbox2').value)"/> <br />
-<input id="textbox3" type="password" name="password2" placeholder="New Password"/> <br />
-<input id="textbox4" type="password" name="password3" placeholder="Confirm Password" onBlur="passcmp()"/> <br /><br>
-<input type="submit" value="REGISTER" name="Submit" /></center>
+		<script type="text/javascript" src="in_head.js"></script>
+	</head>
+	<body>
+    <div class="row" style="height:100px;"><button id="log_out"  class="btn btn-primary" onclick="window.location='logout.php'">
+        <i class="fa fa-btn fa-sign-in"></i> Logout
+    </button>
+</div>
+		<div class="container">
 
 
+			<div class="row"><center><h1>LCD PORTAL</h1></center></div>
+			<hr>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+		            <div class="panel panel-default">
+		                <div class="panel-heading">Register</div>
+		               		<div class="panel-body">
+		                        <form  action="register.php" method="post" class="form-horizontal" enctype="multipart/form-data" name="login_form" role="form" >
+                              <div id="hid"></div><br />
+									              <div class="form-group">
+		                         	 	<label for="username" class="col-md-offset-1 col-md-4 control-label">Full Name</label>
+		                         	 	<div class="col-md-6">
+											                       <input id="textbox5" type="text" class="form-control" name="name1" onblur="user1(document.getElementById('textbox1').value)">
+		                          		</div>
+		                         	 </div>
 
-</form>
-<script>
-    function check(username){
+                               <div class="form-group">
+		                         	 	<label for="password" class="col-md-offset-1 col-md-4 control-label">Username</label>
+		                         	 	<div class="col-md-6">
+											                       <input id="textbox2" type="text" class="form-control" name="username2" onBlur="check(document.getElementById('textbox2').value)">
+		                          		</div>
+		                         	 </div>
+
+                               <div class="form-group">
+                               <label for="password" class="col-md-offset-1 col-md-4 control-label">Password</label>
+                               <div class="col-md-6">
+                                            <input id="textbox3" type="password" class="form-control" name="password2">
+                                 </div>
+                              </div>
+
+                              <div class="form-group">
+                               <label for="password" class=" col-md-offset-1 col-md-4 control-label">Confirm Password</label>
+                               <div class="col-md-6">
+                                            <input id="textbox4" type="password" class="form-control" name="password3">
+                                 </div>
+                              </div>
 
 
-        if (window.XMLHttpRequest)
-        {
-        xmlhttp=new XMLHttpRequest();
-        }
-        else
-        {
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        if (username == null || username == "") 
+                               <div class="form-group">
+                                 <div class="col-md-6 col-md-offset-5">
+
+		                                	<button type="submit" class="btn btn-primary" onclick="success_reg();">
+		                                    	<i class="fa fa-btn fa-sign-in"></i> Register
+		                                	</button>
+                                    </div>
+
+		                        	</div>
+								</form>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	    <script src="js/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="js/in_body.js"></script>
+    <script>
+        function check(username){
+
+
+            if (window.XMLHttpRequest)
             {
-            document.getElementById("hid").innerHTML="<h6>*Enter the username</h6>";
+            xmlhttp=new XMLHttpRequest();
             }
-            else{
-                var url="usercheck.php";
-        url=url+"?id="+username;
-        xmlhttp.open("get",url,false);
-        xmlhttp.send(null);
-        if(xmlhttp.responseText=="found")
-            document.getElementById("hid").innerHTML="<h6>*This username is already used</h6>";
-        else
-        {
-            document.getElementById("hid").innerHTML=" ";
-        }
+            else
+            {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
             }
+            if (username == null || username == "")
+                {
+                document.getElementById("hid").innerHTML="<h6>*Enter the username</h6>";
+                }
+                else{
+                    var url="usercheck.php";
+            url=url+"?id="+username;
+            xmlhttp.open("get",url,false);
+            xmlhttp.send(null);
+            if(xmlhttp.responseText=="found")
+                document.getElementById("hid").innerHTML="<h6>*This username is already used</h6>";
+            else
+            {
+                document.getElementById("hid").innerHTML=" ";
+            }
+                }
 
-        
+
+        }
+        function passcmp(){
+            var x=document.getElementById("textbox3");
+            var y=document.getElementById("textbox4");
+            if(x == y)
+                document.getElementById("hid").innerHTML=" ";
+               else
+                       document.getElementById("hid").innerHTML="<h6>*Passwords do not match</h6>";
+        }
+        function log_out() {
+        window.location.assign("logout.php")
     }
-    function passcmp(){
-        var x=document.getElementById("textbox3");
-        var y=document.getElementById("textbox4");
-        if(x==y)
-            document.getElementById("hid").innerHTML=" ";
-           else 
-                   document.getElementById("hid").innerHTML="<h6>*Passwords do not match</h6>";
+    function success_reg(){
+      alert("Registered Successfully");
+
+
     }
-    function log_out() {
-    window.location.assign("logout.php")
-}
-</script>
-</body>
+    </script>
+	</body>
 </html>

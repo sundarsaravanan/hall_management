@@ -9,7 +9,7 @@ if (isset($_SESSION['id'])) {
     //class 1 to 7
     //oldcse 8 to 14
     //newcse 15 to 21
-    
+
     $i=$_POST['cell'];
     if($i<8){
          $table='class';
@@ -32,12 +32,12 @@ if (isset($_SESSION['id'])) {
 	$query1 = mysqli_query($dbCon, $sql1);
 	    header("Location: table.php");
 	}
-	
+
 	else{
 	    header("Location: table.php");
 	}
-	
-	
+
+
 } else {
     header("Location: index.php");
 }

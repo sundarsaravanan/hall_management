@@ -1,34 +1,12 @@
-html {
-	font-family: Verdana, Geneva, sans-serif;
-}
-h1 {
-	font-size: 24px;
-	text-align: center;
-}
-#wrapper {
-	position: absolute;
-	width: 100%;
-	top: 10%;
-	margin-top: -50px;/* half of #content height*/
-}
+
+
 #form {
 	margin: auto;
 	width: 200px;
 	height: 100px;
 }
 
-body{
-    background-color: #DCD9D9;
 
-}
-
-.container{
-    height :auto;
-    width:auto;
-    margin-left:30px;
-    margin-top:100px;
-   
-}
 
 #box1 {
     background-color:white;
@@ -79,7 +57,7 @@ body{
 }
 
 a1{
-       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
        font-weight: 900;
        font-size:20px;
 }
@@ -97,7 +75,7 @@ a2{
 
 
 a3{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
        font-weight: 900;
 
        font-size: 24px;
@@ -129,10 +107,10 @@ margin-bottom:10px;
 	border:1px solid #623F1D;
     margin-top:10px;
     display:inline;
-}         
+}
 
 h2{
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 #found h6{
@@ -150,4 +128,8 @@ h2{
     float:right;
     margin-right:40px;
     margin-top: 40px;
+}
+
+table td{
+	padding-left: 15px;
 }

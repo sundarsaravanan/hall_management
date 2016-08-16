@@ -8,7 +8,7 @@
 	$id = $row[0];
     if($uid==$row[0])
         echo "found";
-    else 
+    else
         echo "not found";
 	mysqli_close($dbCon);
 

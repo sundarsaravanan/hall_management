@@ -4,116 +4,144 @@ if (isset($_SESSION['id'])) {
 
     $uid = $_SESSION['id'];
     $usname = $_SESSION['username'];
-    header("Location: date.php"); 
+    header("Location: date.php");
 }
 	elseif (isset($_POST['username'])) {
-        
+
 
 	include_once("dbconnect.php");
-	
+
 
         $usname = strip_tags($_POST['username']);
 	$paswd = strip_tags($_POST['password']);
-	
+
 	$usname = mysqli_real_escape_string($dbCon, $usname);
 	$paswd = mysqli_real_escape_string($dbCon, $paswd);
-	
 
-	
+
+
 	$sql = "SELECT id, username, password FROM staff WHERE username = '$usname' AND password='$paswd'";
 	$query = mysqli_query($dbCon, $sql);
 	$row = mysqli_fetch_row($query);
 	$uid = $row[0];
 	$dbUsname = $row[1];
 	$dbPassword = $row[2];
-	
+
 
 	if ($usname == $dbUsname && $paswd == $dbPassword) {
 
 		$_SESSION['username'] = $usname;
 		$_SESSION['id'] = $uid;
 
-		header("Location: user.php");
+		header("Location: date.php");
 	} else {
-		$asgh= "<h2>Oops that username or password combination was incorrect.
-		<br /> Please try again.</h2>";
+
 	}
-	
+
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>LOGIN</title>
-<link href="custom.css" rel="stylesheet" />
-<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-</head>
- 
-<body id="full">
-<div id="wrapper">
-    <img src="logo.png"  width="100%"/>
-<h2><center><br>MINI PROJECT<bR><br>TITLE : LCD PROJECTOR MANAGEMENT SYSTEM<BR><br>LOGIN<BR><center></h2>
-<form id="form" action="index.php" method="POST" enctype="multipart/form-data" name="login_form">
-<div id="found"></div><br />
-<center><input id="textbox1" type="text" name="username" placeholder="Username" onblur="user1(document.getElementById('textbox1').value)"/>
-<center><br>
-<center><input id ="textbox" type="password" name="password" placeholder="Password"/></center> <br />
-<center><input type="submit" value="Login" name="Submit" />
-<input type="button" value="Register" onclick="staff_per()" /></center>
-</form>
+	<head>
+		<title>Kcet-Login</title>
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<link rel="stylesheet" type="text/css" href="for_index.css">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-<script>
-function staff_per() {
-    window.location.assign("staff_per.php")
-}
+		<script type="text/javascript" src="in_head.js"></script>
+	</head>
+	<body>
+		<div class="container">
 
-function user1(username){
-if (window.XMLHttpRequest)
-{
- xmlhttp=new XMLHttpRequest();
- }
-else
- {
- xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
- }
- if (username == null || username == "") 
+			<div class="row" style="height:100px;"></div>
+			<div class="row"><center><h1>LCD PORTAL</h1></center></div>
+			<hr>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+		            <div class="panel panel-default">
+		                <div class="panel-heading">Login</div>
+		               		<div class="panel-body">
+		                        <form id="form" action="index.php" method="post" class="form-horizontal" enctype="multipart/form-data" name="login_form" role="form" >
+                              <div id="found"></div><br />
+									              <div class="form-group">
+		                         	 	<label for="username" class="col-md-4 control-label">Username</label>
+		                         	 	<div class="col-md-6">
+											<input id="textbox1" type="text" class="form-control" name="username" onblur="user1(document.getElementById('textbox1').value)">
+		                          		</div>
+		                         	 </div>
+		                         	 <div class="form-group">
+		                         	 	<label for="password" class="col-md-4 control-label">Password</label>
+		                         	 	<div class="col-md-6">
+											<input id="textbox" type="password" class="form-control" name="password">
+		                          		</div>
+		                         	 </div>
+
+		                         	 <div class="form-group">
+		                                	<button type="submit" class="col-md-4 btn btn-primary">
+		                                    	<i class="fa fa-btn fa-sign-in"></i> Login
+		                                	</button>
+                                      <button type="button" class="col-md-4 col-md-offset-1 btn btn-primary" onclick="staff_per();">
+		                                    	<i class="fa fa-btn fa-sign-in"></i> Register
+		                                	</button>
+		                        	</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	    <script src="js/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="js/in_body.js"></script>
+    <script>
+    function staff_per() {
+        window.location.assign("staff_per.php")
+    }
+
+    function user1(username){
+    if (window.XMLHttpRequest)
     {
-    document.getElementById("found").innerHTML=" ";
+     xmlhttp=new XMLHttpRequest();
+     }
+    else
+     {
+     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+     }
+     if (username == null || username == "")
+        {
+        document.getElementById("found").innerHTML=" ";
+        }
+        else{
+            var url="usercheck.php";
+    url=url+"?id="+username;
+    xmlhttp.open("get",url,false);
+    xmlhttp.send(null);
+    if(xmlhttp.responseText=="found")
+        document.getElementById("found").innerHTML=" ";
+    else
+    {
+        document.getElementById("found").innerHTML="<h6>*This username is not registered</h6>";
     }
-    else{
-        var url="usercheck.php";
-url=url+"?id="+username;
-xmlhttp.open("get",url,false);
-xmlhttp.send(null);
-if(xmlhttp.responseText=="found")
-    document.getElementById("found").innerHTML=" ";
-else
-{
-    document.getElementById("found").innerHTML="<h6>*This username is not registered</h6>";
-}
+        }
     }
-}
 
-function tempAlert(msg,duration)
-{
- var el = document.createElement("div");
- el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;height:200px;width:800px;");
- el.innerHTML = msg;
+    function tempAlert(msg,duration)
+    {
+     var el = document.createElement("div");
+     el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;height:200px;width:800px;");
+     el.innerHTML = msg;
 
- setTimeout(function(){
-  el.parentNode.removeChild(el);
- },duration);
+     setTimeout(function(){
+      el.parentNode.removeChild(el);
+     },duration);
 
- document.body.appendChild(el);
+     document.body.appendChild(el);
 
-}
+    }
 
 
-</script>
-</body>
+    </script>
+	</body>
 </html>
-
-
-

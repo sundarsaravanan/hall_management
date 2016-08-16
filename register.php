@@ -17,8 +17,7 @@ if (!empty($_POST["username2"])  && !empty($_POST["password2"]) && !empty($_POST
 		$_SESSION['username2'] = $username2;
 		$_SESSION['pass2'] = $pass2;
         $_SESSION['fullname']=$fullname;
-		header("Location: index.php");
-    session_destroy();
+		header("Location: confirmation.php");
 
 	} else {
 		echo "<h2>The Password do not match</h2>

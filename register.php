@@ -14,10 +14,14 @@ if (!empty($_POST["username2"])  && !empty($_POST["password2"]) && !empty($_POST
     $fullname=strip_tags($_POST['name1']);
 
 	if ($pass2==$pass3) {
-		$_SESSION['username2'] = $username2;
-		$_SESSION['pass2'] = $pass2;
-        $_SESSION['fullname']=$fullname;
-		header("Location: confirmation.php");
+    include_once("dbconnect.php");
+  	$query = "INSERT INTO staff"."(id,full_name,username,password,reference)"."VALUES (NULL,'$fullname','$username2','$pass2','$usname')";
+  	$result = mysqli_query($dbCon, $query)
+  	or die('Error querying database.');
+  	mysqli_close($dbCon);
+  	session_destroy();
+    header("Location: index.php");
+	
 
 	} else {
 		echo "<h2>The Password do not match</h2>

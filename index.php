@@ -4,7 +4,7 @@ if (isset($_SESSION['id'])) {
 
     $uid = $_SESSION['id'];
     $usname = $_SESSION['username'];
-    header("Location: date.php");
+    header("Location: table.php");
 }
 	elseif (isset($_POST['username'])) {
 
@@ -33,7 +33,7 @@ if (isset($_SESSION['id'])) {
 		$_SESSION['username'] = $usname;
 		$_SESSION['id'] = $uid;
 
-		header("Location: date.php");
+		header("Location: table.php");
 	} else {
 
 	}
@@ -99,48 +99,7 @@ if (isset($_SESSION['id'])) {
     function staff_per() {
         window.location.assign("staff_per.php")
     }
-
-    function user1(username){
-    if (window.XMLHttpRequest)
-    {
-     xmlhttp=new XMLHttpRequest();
-     }
-    else
-     {
-     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-     }
-     if (username == null || username == "")
-        {
-        document.getElementById("found").innerHTML=" ";
-        }
-        else{
-            var url="usercheck.php";
-    url=url+"?id="+username;
-    xmlhttp.open("get",url,false);
-    xmlhttp.send(null);
-    if(xmlhttp.responseText=="found")
-        document.getElementById("found").innerHTML=" ";
-    else
-    {
-        document.getElementById("found").innerHTML="<h6>*This username is not registered</h6>";
-    }
-        }
-    }
-
-    function tempAlert(msg,duration)
-    {
-     var el = document.createElement("div");
-     el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;height:200px;width:800px;");
-     el.innerHTML = msg;
-
-     setTimeout(function(){
-      el.parentNode.removeChild(el);
-     },duration);
-
-     document.body.appendChild(el);
-
-    }
-
+    
 
     </script>
 	</body>

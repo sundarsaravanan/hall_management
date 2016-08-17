@@ -22,8 +22,8 @@
 
 #box {
     background-color:white;
-    width:150px;
-    height:100px;
+    width:100px;
+    height:75px;
     margin-right:5px;
     margin-left:5px;
     margin-top:10px;
@@ -34,8 +34,8 @@
 
 #red{
     background-color:#F8786F;
-    width:150px;
-    height:100px;
+    width:100px;
+    height:75px;
     margin-right:5px;
     margin-left:5px;
     margin-top:10px;
@@ -46,8 +46,8 @@
 
 #green{
     background-color:#BFFCB4;
-    width:150px;
-    height:100px;
+    width:100px;
+    height:75px;
     margin-right:5px;
     margin-left:5px;
     margin-top:10px;
@@ -56,31 +56,13 @@
     border-radius: 15px;
 }
 
-a1{
-       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-       font-weight: 900;
-       font-size:20px;
-}
 
-
-a2{
-    	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
-        font-weight: 900;
-        font-size:12px;
-}
 
 .hidden {
     display: none;
 }
 
 
-a3{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-       font-weight: 900;
-
-       font-size: 24px;
-	text-align: center;
-}
 
 #textbox,#textbox1,#textbox2,#textbox3,#textbox4,#textbox5
 {
@@ -109,9 +91,6 @@ margin-bottom:10px;
     display:inline;
 }
 
-h2{
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
 
 #found h6{
    color:red;

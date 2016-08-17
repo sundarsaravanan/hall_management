@@ -84,7 +84,7 @@ if (!empty($_POST["username1"])  && !empty($_POST["password1"])) {
 
 		<script type="text/javascript" src="js/in_body.js"></script>
     <script>
-    function staff_per() {
+  /*  function staff_per() {
         window.location.assign("staff_per.php")
     }
 
@@ -115,7 +115,7 @@ if (!empty($_POST["username1"])  && !empty($_POST["password1"])) {
         }
     }
 
-
+*/
 
 
     </script>

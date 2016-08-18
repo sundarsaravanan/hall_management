@@ -75,7 +75,7 @@ if (!empty($_POST['date'])) {
                   <div class="form-group">
                                 <label for="username" class="col-md-4 control-label">Choose date</label>
                                 <div class="col-md-4">
-                                   <input type="date" class="form-control" name="date" value="<?php echo $_SESSION['date']?>">
+                                   <input type="date" class="form-control" name="date" placeholder="Choose Date" value="<?php echo $_SESSION['date']?>">
                                   </div>
                                </div>
 
@@ -138,6 +138,10 @@ if (!empty($_POST['date'])) {
                                   }else{
                                       $button='BOOKED BY <BR>'.strtoupper($per[$i]);
                                       }
+                                      if(empty($date)){
+                                        $button="-";
+                                        $id="box";
+                                      }
 
                           	echo '<form action='.$action.' method="post" enctype="multipart/form-data">';
                               echo '<input class="hidden" name="cell" value='.$i.' >';
@@ -182,6 +186,10 @@ if (!empty($_POST['date'])) {
                                   }else{
                                       $button='BOOKED BY <BR>'.strtoupper($per[$i]);
                                       }
+                                      if(empty($date)){
+                                        $button="-";
+                                        $id="box";
+                                      }
 
                           	echo '<form action='.$action.' method="post" enctype="multipart/form-data">';
                           	echo '<input class="hidden" name="cell" value='.$i.' >';
@@ -221,6 +229,10 @@ if (!empty($_POST['date'])) {
                                   $button='BOOKED BY<br>YOU';
                                   }else{
                                       $button='BOOKED BY <BR>'.strtoupper($per[$i]);
+                                      }
+                                      if(empty($date)){
+                                        $button="-";
+                                        $id="box";
                                       }
 
                           	echo '<form action='.$action.' method="post" enctype="multipart/form-data">';

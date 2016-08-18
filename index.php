@@ -34,9 +34,7 @@ if (isset($_SESSION['id'])) {
 		$_SESSION['id'] = $uid;
 
 		header("Location: table.php");
-	} else {
-
-	}
+	} 
 
 }
 ?>
@@ -99,7 +97,7 @@ if (isset($_SESSION['id'])) {
     function staff_per() {
         window.location.assign("staff_per.php")
     }
-    
+
 
     </script>
 	</body>

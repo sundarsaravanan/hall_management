@@ -21,12 +21,9 @@ if (!empty($_POST["username2"])  && !empty($_POST["password2"]) && !empty($_POST
   	mysqli_close($dbCon);
   	session_destroy();
     header("Location: index.php");
-	
 
-	} else {
-		echo "<h2>The Password do not match</h2>
-		<br /> Please try again.</h2>";
-	}
+
+	} 
 
 }
 ?>

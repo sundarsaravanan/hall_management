@@ -18,10 +18,7 @@ if (!empty($_POST["username1"])  && !empty($_POST["password1"])) {
 		$_SESSION['id1'] = $uid;
 		header("Location: register.php");
 	}
-	else {
-		echo "<h2>Oops that username or password combination was incorrect.
-		<br /> Please try again.</h2>";
-	}
+	
 
 }
 ?>

@@ -112,3 +112,6 @@ margin-bottom:10px;
 table td{
 	padding-left: 15px;
 }
+button:focus {
+  outline: none;
+}

@@ -8,12 +8,11 @@ else{
 	 header("Location: staff_per.php");
 }
 if (!empty($_POST["username2"])  && !empty($_POST["password2"]) && !empty($_POST["password3"])) {
-    $username2 = strip_tags($_POST['username2']);
-	$pass2 = strip_tags($_POST['password2']);
-	$pass3 = strip_tags($_POST['password3']);
-    $fullname=strip_tags($_POST['name1']);
-
-	if ($pass2==$pass3) {
+      $username2 = strip_tags($_POST['username2']);
+	    $pass2 = strip_tags($_POST['password2']);
+	    $pass3 = strip_tags($_POST['password3']);
+      $fullname=strip_tags($_POST['name1']);
+if ($pass2==$pass3) {
     include_once("dbconnect.php");
   	$query = "INSERT INTO staff"."(id,full_name,username,password,reference)"."VALUES (NULL,'$fullname','$username2','$pass2','$usname')";
   	$result = mysqli_query($dbCon, $query)
@@ -23,7 +22,7 @@ if (!empty($_POST["username2"])  && !empty($_POST["password2"]) && !empty($_POST
     header("Location: index.php");
 
 
-	} 
+	}
 
 }
 ?>

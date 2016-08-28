@@ -22,17 +22,25 @@ if (isset($_SESSION['id'])) {
     		  $flag=1;
   	  }
   	}
-  	if($flag==0){
+    date_default_timezone_set('Asia/Calcutta');
+        $timestamp = strtotime($date);
+    $day_ref=array("sunday","monday","tuesday","wednesday","thursday","friday","saturday");
+$day = date('w', $timestamp);
+ if($flag==0){
   	    	header("Location: table.php");
   	}
   	else{
       $hall=array("d1hall","oldcse","newcse","movable");
       for ($i=0;$i<4;$i++){
-  	       $sql="insert into log (date,hall) values ('$date','$hall[$i]')";
+
+        $sql="select * from lab where day='$day_ref[$day]' and hall='$hall[$i]'";
+      	$query = mysqli_query($dbCon, $sql);
+      	$row= mysqli_fetch_row($query);
+$sql="insert into log values ('$date','$hall[$i]',$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9],$row[10])";
   	       $query = mysqli_query($dbCon, $sql);
         }
   	header("Location: table.php");
-	 }
+  }
 	}
 	else {
     header("Location: index.php");

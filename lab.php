@@ -2,17 +2,17 @@
 session_start();
 if (isset($_SESSION['id'])) {
   $usname = $_SESSION['username'];
-  $date=$_SESSION['date'];
+  $hall=$_SESSION['hall'];
   include_once("dbconnect.php");
 }
 else {
   header("Location: index.php");
 }
-if (!empty($_POST['date'])) {
- $date = strip_tags($_POST['date']);
- $_SESSION['date'] = $date;
- header("Location: check.php");
+if (!empty($_POST['hall'])) {
+ $hall = strip_tags($_POST['hall']);
+ $_SESSION['hall'] = $hall;
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,29 +23,33 @@ if (!empty($_POST['date'])) {
   <script type="text/javascript" src="js/custom.js"></script>
 </head>
 <body>
+
   <button id="log_out"  class="btn btn-primary" onclick="window.location='logout.php'">
     <i class="fa fa-btn fa-sign-in"></i> Logout
   </button>
-  <?php
-  if($_SESSION['role']=="admin"){
-    echo "<button id='log_out'  class='btn btn-primary' onclick='edit();'>
-      <i class='fa fa-btn fa-sign-in'></i> Edit
-    </button>";
-  }
+  <button id="log_out"  class="btn btn-primary" onclick="window.location='table.php'">
+    <i class="fa fa-btn fa-sign-in"></i> Home
+  </button>
 
-   ?>
   <div class="container-fluid">
     <div class="row" style="height:10px;"></div>
-    <div class="row"><div class="col-md-4 col-md-offset-4"><center><h3>CSE DEPARTMENT - LCD PORTAL</h3></center></div></div>
+    <div class="row"><div class="col-md-4 col-md-offset-4"><center><h3>Admin Portal</h3></center></div></div>
+
     <hr>
+
     <div class="row">
       <div class="col-md-5 col-md-offset-7">
-        <form action="table.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
+        <form action="lab.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
           <div class="form-group">
-            <label for="username" class="col-md-4 control-label">Choose date</label>
-            <div class="col-md-5">
-             <input type="date" class="form-control" name="date" placeholder="Choose Date" value="<?php echo $_SESSION['date']?>">
-           </div>
+            <div class="col-md-4 col-md-offset-4">
+              <select class="form-control" name="hall" >
+                  <option <?php if($_SESSION['hall']=="oldcse") echo 'selected="selected"'; ?>>Select Hall</option>
+					        <option value="oldcse" <?php if($_SESSION['hall']=="oldcse") echo 'selected="selected"'; ?>>Oldcse Lab</option>
+                  <option value="newcse" <?php if($_SESSION['hall']=="newcse") echo 'selected="selected"'; ?>>Newcse Lab</option>
+                  <option value="d1hall" <?php if($_SESSION['hall']=="d1hall") echo 'selected="selected"'; ?>>D1 Hall</option>
+                  <option value="movable"<?php if($_SESSION['hall']=="movable") echo 'selected="selected"'; ?>>Movable</option>
+					      </select>
+               </div>
          </div>
          <div class="form-group">
           <div class="col-md-6 col-md-offset-4">
@@ -57,9 +61,11 @@ if (!empty($_POST['date'])) {
       </form>
     </div>
   </div>
-  <hr>
+
+<hr>
   <div class="row"  >
-    <div class="col-md-12" >
+    <div class="col-md-12 " >
+
           <div class="row" >
             <div class="col-md-12" style="padding-left:10px;">
               <table>
@@ -88,38 +94,31 @@ if (!empty($_POST['date'])) {
                   <td><h5><center>4.00  - 6.00 pm</center></h5></td>
                 </tr>
                 <?php
-                $halls=array("D1 HALL","OLD CSE LAB","NEW CSE LAB","MOVABLE");
-                $hall_ref=array("d1hall","oldcse","newcse","movable");
-                for($k=0;$k<4;$k++){
-                    echo "<tr><td><h4><center>$halls[$k]</center></h4></td>";
-                    $sql = "SELECT * FROM log WHERE date='$date' and hall='$hall_ref[$k]' ";
+                $days=array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+                $day_ref=array("monday","tuesday","wednesday","thursday","friday","saturday");
+                for($k=0;$k<6;$k++){
+                    echo "<tr><td><h4><center>$days[$k]</center></h4></td>";
+                    $sql = "SELECT * FROM lab where day='$day_ref[$k]' and hall='$hall' ";
                     $query = mysqli_query($dbCon, $sql);
                     $row = mysqli_fetch_row($query);
                     for($i=2;$i<=10;$i++){
-                      $action='cancel_period.php';
+                      $action='cancel_lab.php';
                         echo "<td>";
-                        if($row[$i]=='0'){
+                        if($row[$i]==0){
                           $id='box';
-                          $button='AVAILABLE';
-                          $action='book_period.php';
-                        }elseif($row[$i]==$usname){
-                          $id='green';
-                          $button='BOOKED BY<br>YOU';
-
-                      }elseif($row[$i]=='1'){
-                        $id='blue';
-                        $button='Lab Hour';
-                      }else{
-                          $id='red';
-                          $button='BOOKED BY <BR>'.strtoupper($row[$i]);
+                          $button='Free';
+                          $action='book_lab.php';
+                        }else{
+                          $id='blue';
+                          $button='Blocked';
                         }
-                        if(empty($date)){
+                        if(empty($hall)){
                           $button="-";
                           $id="box";
                         }
                         $j=$i-2;
                         $periodid="period$j";
-                        echo '<button id='.$id.' type="button" hall="'.$hall_ref[$k].'" perform="'.$action.'" periodid="'.$periodid.'"  onclick="checkperiod1(this);" ><h6><i>'.$button.'</i></h6></button>';
+                        echo '<button id='.$id.' type="button"  row_name="'.$day_ref[$k].'" perform="'.$action.'" periodid="'.$periodid.'"  onclick="checkperiod(this);"><h6><i>'.$button.'</i></h6></button>';
                         echo "</td>";
                       }
                     echo '</tr>';
@@ -128,7 +127,8 @@ if (!empty($_POST['date'])) {
           </table>
         </div>
       </div>
-</div>
+    </div>
+
 </div>
 </div>
 <script src="js/bootstrap.min.js"></script>

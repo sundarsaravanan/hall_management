@@ -20,18 +20,20 @@ elseif (isset($_POST['username'])) {
 
 	$notmatch="<h4>*Username and Password do not match</h4>";
 
-	$sql = "SELECT id, username, password FROM staff WHERE username = '$usname' AND password='$paswd'";
+	$sql = "SELECT id, username, password,role FROM staff WHERE username = '$usname' AND password='$paswd'";
 	$query = mysqli_query($dbCon, $sql);
 	$row = mysqli_fetch_row($query);
 	$uid = $row[0];
 	$dbUsname = $row[1];
 	$dbPassword = $row[2];
+	$role=$row[3];
 
 
 	if ($usname == $dbUsname && $paswd == $dbPassword) {
 
 		$_SESSION['username'] = $usname;
 		$_SESSION['id'] = $uid;
+		$_SESSION['role']=$role;
 
 		header("Location: table.php");
 	}
@@ -53,7 +55,7 @@ elseif (isset($_POST['username'])) {
 	<div class="container">
 
 		<div class="row" style="height:100px;"></div>
-		<div class="row"><center><h1>LCD PORTAL</h1></center></div>
+		<div class="row"><center><h2>CSE DEPARTMENT</h2><br><h3>LCD PORTAL</h3></center></div>
 		<hr>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">

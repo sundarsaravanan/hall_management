@@ -17,7 +17,7 @@ if (isset($_SESSION['id'])) {
 
 	if($present==$usname){
 		$per="AVAILABLE";
-		$sql1 = "update log set $periodid='$per' where date='$date' and hall='$hall'";
+		$sql1 = "update log set $periodid='0' where date='$date' and hall='$hall'";
 		$query1 = mysqli_query($dbCon, $sql1);
 		header("Location: table.php");
 	}

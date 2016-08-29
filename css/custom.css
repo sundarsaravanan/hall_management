@@ -1,8 +1,5 @@
 
-.container-fluid{
-	background-color:#cdcdcd;
 
-}
 #form {
 	margin: auto;
 	width: 200px;
@@ -12,9 +9,9 @@
 
 
 #box1 {
-    background-color:white;
-    width:150px;
-    height:100px;
+    background-color:#cdcdcd;
+    width:100px;
+    height:70px;
     margin-right:5px;
     margin-left:5px;
     margin-top:10px;

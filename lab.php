@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['id'])) {
+if (isset($_SESSION['id']) && $_SESSION['role']=="admin") {
   $usname = $_SESSION['username'];
   $hall=$_SESSION['hall'];
   include_once("dbconnect.php");
@@ -32,7 +32,7 @@ if (!empty($_POST['hall'])) {
   </button>
 
   <div class="container-fluid">
-    <div class="row" style="height:10px;"></div>
+    <div class="row" style="height:30px;"></div>
     <div class="row"><div class="col-md-4 col-md-offset-4"><center><h3>Admin Portal</h3></center></div></div>
 
     <hr>
@@ -62,13 +62,13 @@ if (!empty($_POST['hall'])) {
     </div>
   </div>
 
-<hr>
   <div class="row"  >
     <div class="col-md-12 " >
 
           <div class="row" >
-            <div class="col-md-12" style="padding-left:10px;">
-              <table>
+            <div class="col-md-10 col-md-offset-1" style="padding-left:10px;">
+              <div class="panel panel-default">
+                <div class="panel-body">              <center><table>
                 <tr>
                   <td><h4><center>VENUE</center></h4></td>
                   <td><h4><center>0</center></h4></td>
@@ -82,7 +82,7 @@ if (!empty($_POST['hall'])) {
                   <td><h4><center>EVENING</center></h4></td>
                 </tr>
                 <tr>
-                  <td><h5><center></center></h5></td>
+                  <b><td><h5><center></center></h5></td>
                   <td><h5><center>8.30  - 9.00 am</center></h5></td>
                   <td><h5><center>9.00  - 9.50 am</center></h5></td>
                   <td><h5><center>9.50  - 10.40 am</center></h5></td>
@@ -124,9 +124,10 @@ if (!empty($_POST['hall'])) {
                     echo '</tr>';
                 }
                 ?>
-          </table>
+          </table></center>
         </div>
       </div>
+    </div></div>
     </div>
 
 </div>

@@ -13,6 +13,7 @@ if (!empty($_POST['date'])) {
  $_SESSION['date'] = $date;
  header("Location: check.php");
 }
+date_default_timezone_set('Asia/Calcutta');
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +36,7 @@ if (!empty($_POST['date'])) {
 
    ?>
   <div class="container-fluid">
-    <div class="row" style="height:10px;"></div>
+    <div class="row" style="height:30px;"></div>
     <div class="row"><div class="col-md-4 col-md-offset-4"><center><h3>CSE DEPARTMENT - LCD PORTAL</h3></center></div></div>
     <hr>
     <div class="row">
@@ -57,11 +58,14 @@ if (!empty($_POST['date'])) {
       </form>
     </div>
   </div>
-  <hr>
+  <br>
   <div class="row"  >
     <div class="col-md-12" >
+
           <div class="row" >
-            <div class="col-md-12" style="padding-left:10px;">
+            <div class="col-md-10 col-md-offset-1" style="padding-left:10px;">
+              <div class="panel panel-default">
+                <div class="panel-body">
               <table>
                 <tr>
                   <td><h4><center>VENUE</center></h4></td>
@@ -90,6 +94,7 @@ if (!empty($_POST['date'])) {
                 <?php
                 $halls=array("D1 HALL","OLD CSE LAB","NEW CSE LAB","MOVABLE");
                 $hall_ref=array("d1hall","oldcse","newcse","movable");
+                $time_ref=array("","","08:30","09:00","09:50","11:00","11:50","13:30","14:20","15:10","16:00");
                 for($k=0;$k<4;$k++){
                     echo "<tr><td><h4><center>$halls[$k]</center></h4></td>";
                     $sql = "SELECT * FROM log WHERE date='$date' and hall='$hall_ref[$k]' ";
@@ -97,29 +102,45 @@ if (!empty($_POST['date'])) {
                     $row = mysqli_fetch_row($query);
                     for($i=2;$i<=10;$i++){
                       $action='cancel_period.php';
+                      $op=1;
+                      $type="";
                         echo "<td>";
                         if($row[$i]=='0'){
                           $id='box';
-                          $button='AVAILABLE';
+                          $button='Free';
                           $action='book_period.php';
                         }elseif($row[$i]==$usname){
                           $id='green';
-                          $button='BOOKED BY<br>YOU';
+                          $button='Allotted';
 
                       }elseif($row[$i]=='1'){
                         $id='blue';
                         $button='Lab Hour';
+                        $type="disabled";
                       }else{
                           $id='red';
-                          $button='BOOKED BY <BR>'.strtoupper($row[$i]);
+                          $button='Booked by <BR>'.strtoupper($row[$i]);
+                          $type="disabled";
+
                         }
-                        if(empty($date)){
-                          $button="-";
-                          $id="box";
-                        }
+
+
+                        $ts=time();
+                        $date1=date_create("$date $time_ref[$i]");
+                        $date2=strtotime(date_format($date1,"Y/m/d H:i"));
+                        if($ts-$date2>7200){
+                          $type="disabled";
+                          $op=0.7;
+                      }
+                      if(empty($date)){
+                        $button="-";
+                        $id="box";
+                      }
+
+
                         $j=$i-2;
                         $periodid="period$j";
-                        echo '<button id='.$id.' type="button" hall="'.$hall_ref[$k].'" perform="'.$action.'" periodid="'.$periodid.'"  onclick="checkperiod1(this);" ><h6><i>'.$button.'</i></h6></button>';
+                        echo '<button id="'.$id.'" type="button" time_ref="'.$time_ref[$i].'" hall="'.$hall_ref[$k].'" perform="'.$action.'" periodid="'.$periodid.'"  style="opacity:'.$op.'"onclick="checkperiod1(this);" '.$type.'><h6><i>'.$button.'</i></h6></button>';
                         echo "</td>";
                       }
                     echo '</tr>';
@@ -127,6 +148,7 @@ if (!empty($_POST['date'])) {
                 ?>
           </table>
         </div>
+      </div></div>
       </div>
 </div>
 </div>

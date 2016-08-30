@@ -35,7 +35,7 @@ elseif (isset($_POST['username'])) {
 		$_SESSION['id'] = $uid;
 		$_SESSION['role']=$role;
 
-		header("Location: table.php");
+		header("Location: table1.php");
 	}
 
 }

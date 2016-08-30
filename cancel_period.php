@@ -23,7 +23,7 @@ if (isset($_SESSION['id'])) {
 	}
 
 	else{
-		header("Location: table.php");
+		header("Location: table1.php");
 	}
 
 

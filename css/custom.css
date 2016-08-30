@@ -8,7 +8,7 @@
 
 
 
-#box1 {
+.bo1x {
     background-color:#cdcdcd;
     width:100px;
     height:70px;
@@ -18,9 +18,10 @@
     margin-bottom:10px;
     border:solid black 2px;
     border-radius: 15px;
+
 }
 
-#box {
+.box {
     background-color:white;
     width:100px;
     height:70px;
@@ -30,10 +31,11 @@
     margin-bottom:10px;
     border:solid black 2px;
     border-radius: 15px;
+		font-style: italic;
 
 }
 
-#red{
+.red{
     background-color:#465c8b;
     width:100px;
     height:70px;
@@ -44,9 +46,11 @@
     border:solid black 2px;
     border-radius: 15px;
 		color:white;
+		font-style: italic;
+
 }
 
-#green{
+.green{
     background-color:#ADFCC5;
     width:100px;
     height:70px;
@@ -56,9 +60,11 @@
     margin-bottom:10px;
     border:solid black 2px;
     border-radius: 15px;
+		font-style: italic;
+
 }
 
-#blue{
+.blue{
     background-color:#0699FB;
     width:100px;
     height:70px;
@@ -69,6 +75,8 @@
     border:solid black 2px;
     border-radius: 15px;
 		color:white;
+		font-style: italic;
+
 }
 
 

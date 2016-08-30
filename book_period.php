@@ -8,7 +8,7 @@
         $hall=$_POST["hall"];
         $sql = "update log set $periodid='$usname' where date='$date' and hall='$hall'";
       	$query = mysqli_query($dbCon, $sql);
-  } 
+  }
   else {
         header("Location: index.php");
   }

@@ -27,7 +27,7 @@ if (isset($_SESSION['id'])) {
     $day_ref=array("sunday","monday","tuesday","wednesday","thursday","friday","saturday");
 $day = date('w', $timestamp);
  if($flag==0){
-  	    	header("Location: table.php");
+  	    	header("Location: table1.php");
   	}
   	else{
       $hall=array("d1hall","oldcse","newcse","movable");
@@ -39,7 +39,7 @@ $day = date('w', $timestamp);
 $sql="insert into log values ('$date','$hall[$i]',$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9],$row[10])";
   	       $query = mysqli_query($dbCon, $sql);
         }
-  	header("Location: table.php");
+  	header("Location: table1.php");
   }
 	}
 	else {

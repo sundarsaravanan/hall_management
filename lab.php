@@ -67,8 +67,7 @@ if (!empty($_POST['hall'])) {
 
           <div class="row" >
             <div class="col-md-10 col-md-offset-1" style="padding-left:10px;">
-              <div class="panel panel-default">
-                <div class="panel-body">              <center><table>
+                         <center><table>
                 <tr>
                   <td><h4><center>VENUE</center></h4></td>
                   <td><h4><center>0</center></h4></td>
@@ -118,7 +117,7 @@ if (!empty($_POST['hall'])) {
                         }
                         $j=$i-2;
                         $periodid="period$j";
-                        echo '<button id='.$id.' type="button"  row_name="'.$day_ref[$k].'" perform="'.$action.'" periodid="'.$periodid.'"  onclick="checkperiod(this);"><h6><i>'.$button.'</i></h6></button>';
+                        echo '<button class='.$id.' type="button"  row_name="'.$day_ref[$k].'" perform="'.$action.'" periodid="'.$periodid.'"  onclick="checkperiod(this);"><h6><i>'.$button.'</i></h6></button>';
                         echo "</td>";
                       }
                     echo '</tr>';
@@ -127,7 +126,6 @@ if (!empty($_POST['hall'])) {
           </table></center>
         </div>
       </div>
-    </div></div>
     </div>
 
 </div>

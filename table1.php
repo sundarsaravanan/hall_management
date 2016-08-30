@@ -66,8 +66,7 @@ date_default_timezone_set('Asia/Calcutta');
 
           <div class="row" >
             <div class="col-lg-10 col-lg-offset-1" style="padding-left:10px;">
-              <div class="panel panel-default">
-                <div class="panel-body">
+
               <table>
                 <tr>
                   <td><h4><center>VENUE</center></h4></td>
@@ -164,7 +163,6 @@ date_default_timezone_set('Asia/Calcutta');
 
                 -->
         </div>
-      </div></div>
       </div>
 </div>
 </div>

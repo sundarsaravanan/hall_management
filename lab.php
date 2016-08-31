@@ -27,7 +27,7 @@ if (!empty($_POST['hall'])) {
   <button id="log_out"  class="btn btn-primary" onclick="window.location='logout.php'">
     <i class="fa fa-btn fa-sign-in"></i> Logout
   </button>
-  <button id="log_out"  class="btn btn-primary" onclick="window.location='table.php'">
+  <button id="log_out"  class="btn btn-primary" onclick="window.location='table1.php'">
     <i class="fa fa-btn fa-sign-in"></i> Home
   </button>
 
@@ -65,32 +65,20 @@ if (!empty($_POST['hall'])) {
   <div class="row"  >
     <div class="col-md-12 " >
 
-          <div class="row" >
-            <div class="col-md-10 col-md-offset-1" style="padding-left:10px;">
+
                          <center><table>
+
                 <tr>
-                  <td><h4><center>VENUE</center></h4></td>
-                  <td><h4><center>0</center></h4></td>
-                  <td><h4><center>I</center></h4></td>
-                  <td><h4><center>II</center></h4></td>
-                  <td><h4><center>III</center></h4></td>
-                  <td><h4><center>IV</center></h4></td>
-                  <td><h4><center>V</center></h4></td>
-                  <td><h4><center>VI</center></h4></td>
-                  <td><h4><center>VII</center></h4></td>
-                  <td><h4><center>EVENING</center></h4></td>
-                </tr>
-                <tr>
-                  <b><td><h5><center></center></h5></td>
-                  <td><h5><center>8.30  - 9.00 am</center></h5></td>
-                  <td><h5><center>9.00  - 9.50 am</center></h5></td>
-                  <td><h5><center>9.50  - 10.40 am</center></h5></td>
-                  <td><h5><center>11.00  - 11.50 am</center></h5></td>
-                  <td><h5><center>11.50  - 12.40 pm</center></h5></td>
-                  <td><h5><center>1.30  - 2.20 pm</center></h5></td>
-                  <td><h5><center>2.20  - 3.10 pm</center></h5></td>
-                  <td><h5><center>3.10  - 4.00 pm</center></h5></td>
-                  <td><h5><center>4.00  - 6.00 pm</center></h5></td>
+                  <b><td><h4><center>Venue</center></h4></td>
+                  <td><h4><center>8.30  - 9.00 am</center></h4></td>
+                  <td><h4><center>9.00  - 9.50 am</center></h4></td>
+                  <td><h4><center>9.50  - 10.40 am</center></h4></td>
+                  <td><h4><center>11.00  - 11.50 am</center></h4></td>
+                  <td><h4><center>11.50  - 12.40 pm</center></h4></td>
+                  <td><h4><center>1.30  - 2.20 pm</center></h4></td>
+                  <td><h4><center>2.20  - 3.10 pm</center></h4></td>
+                  <td><h4><center>3.10  - 4.00 pm</center></h4></td>
+                  <td><h4><center>4.00  - 6.00 pm</center></h4></td>
                 </tr>
 
                 <tr>
@@ -169,8 +157,7 @@ if (!empty($_POST['hall'])) {
       </div>
     </div>
 
-</div>
-</div>
+
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/in_body.js"></script>
 </body>

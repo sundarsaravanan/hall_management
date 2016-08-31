@@ -55,33 +55,31 @@ elseif (isset($_POST['username'])) {
 	<div class="container">
 
 		<div class="row" style="height:100px;"></div>
-		<div class="row"><center><h2>CSE DEPARTMENT</h2><br><h3>LCD PORTAL</h3></center></div>
+		<div class="row"><center><h3>CSE DEPARTMENT</h3><br><h3>LCD PORTAL</h3></center></div>
 		<hr>
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-lg-6 col-lg-offset-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">Login</div>
 					<div class="panel-body">
 						<form id="form" action="index.php" method="post" class="form-horizontal" enctype="multipart/form-data" name="login_form" role="form" >
 							<div id="found"></div><br />
 							<div class="form-group">
-								<label for="username" class="col-md-4 control-label">Username</label>
-								<div class="col-md-6">
-									<input id="textbox1" type="text" class="form-control" name="username" onblur="user1(document.getElementById('textbox1').value)">
+								<div class="col-lg-12">
+									<input id="textbox1" type="text" class="form-control" placeholder="Name"name="username" onblur="user1(document.getElementById('textbox1').value)">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="password" class="col-md-4 control-label">Password</label>
-								<div class="col-md-6">
-									<input id="textbox" type="password" class="form-control" name="password">
+								<div class="col-lg-12">
+									<input id="textbox" type="password" class="form-control" placeholder="Password" name="password">
 								</div>
 							</div>
 
 							<div class="form-group">
-								<button type="submit" class="col-md-4 btn btn-primary">
+								<button type="submit" class="col-lg-4 col-lg-offset-1 btn btn-primary">
 									<i class="fa fa-btn fa-sign-in"></i> Login
 								</button>
-								<button type="button" class="col-md-4 col-md-offset-1 btn btn-primary" onclick="staff_per();">
+								<button type="button" class="col-lg-4 col-lg-offset-1 btn btn-primary" onclick="staff_per();">
 									<i class="fa fa-btn fa-sign-in"></i> Register
 								</button>
 							</div>

@@ -46,7 +46,7 @@ function basi(ar,halln,name1){
     }
     else if(ar[i+2]=='1'){
       document.getElementById(butname).className="blue";
-      document.getElementById(butname).innerHTML="Lab Hour";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
       document.getElementById(butname).disabled = true;
       document.getElementById(butname).setAttribute("time_ref", time_ref[i]);
       document.getElementById(butname).setAttribute("periodid",periodid);
@@ -54,7 +54,7 @@ function basi(ar,halln,name1){
     }
     else if(ar[i+2]==name1){
       document.getElementById(butname).className="green";
-      document.getElementById(butname).innerHTML="Allotted";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>";
       document.getElementById(butname).setAttribute("perform", "cancel_period.php");
       document.getElementById(butname).setAttribute("time_ref",time_ref[i]);
       document.getElementById(butname).setAttribute("hall",halln);
@@ -64,7 +64,7 @@ function basi(ar,halln,name1){
 
     else{
       document.getElementById(butname).className="red";
-      document.getElementById(butname).innerHTML="Booked by <br>"+ar[i+2];
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span>";
       document.getElementById(butname).disabled = true;
       document.getElementById(butname).setAttribute("time_ref",time_ref[i]);
       document.getElementById(butname).setAttribute("periodid",periodid);
@@ -122,7 +122,7 @@ function basi1(arr,dayn){
     }
     else {
       document.getElementById(butname).className="blue";
-      document.getElementById(butname).innerHTML="Lab Hour";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
       document.getElementById(butname).setAttribute("perform", "cancel_lab.php");
       document.getElementById(butname).setAttribute("periodid",periodid);
 
@@ -162,7 +162,7 @@ function checkperiod(e,dayn){
   {
     perop1(id,dayn);
     e.className="blue";
-    e.innerHTML="Lab hour";
+    e.innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
     e.setAttribute("perform", "cancel_lab.php");
 
   }
@@ -214,7 +214,7 @@ function checkperiod1(e){
   {
     perop(id);
     e.className="green";
-    e.innerHTML="Allotted";
+    e.innerHTML="<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>";
     e.setAttribute("perform", "cancel_period.php");
 
   }

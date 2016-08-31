@@ -22,7 +22,7 @@ if (!empty($_POST['hall'])) {
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <script type="text/javascript" src="js/custom.js"></script>
 </head>
-<body>
+<body onload="bas_lab();">
 
   <button id="log_out"  class="btn btn-primary" onclick="window.location='logout.php'">
     <i class="fa fa-btn fa-sign-in"></i> Logout
@@ -92,37 +92,78 @@ if (!empty($_POST['hall'])) {
                   <td><h5><center>3.10  - 4.00 pm</center></h5></td>
                   <td><h5><center>4.00  - 6.00 pm</center></h5></td>
                 </tr>
-                <?php
-                $days=array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-                $day_ref=array("monday","tuesday","wednesday","thursday","friday","saturday");
-                for($k=0;$k<6;$k++){
-                    echo "<tr><td><h4><center>$days[$k]</center></h4></td>";
-                    $sql = "SELECT * FROM lab where day='$day_ref[$k]' and hall='$hall' ";
-                    $query = mysqli_query($dbCon, $sql);
-                    $row = mysqli_fetch_row($query);
-                    for($i=2;$i<=10;$i++){
-                      $action='cancel_lab.php';
-                        echo "<td>";
-                        if($row[$i]==0){
-                          $id='box';
-                          $button='Free';
-                          $action='book_lab.php';
-                        }else{
-                          $id='blue';
-                          $button='Blocked';
-                        }
-                        if(empty($hall)){
-                          $button="-";
-                          $id="box";
-                        }
-                        $j=$i-2;
-                        $periodid="period$j";
-                        echo '<button class='.$id.' type="button"  row_name="'.$day_ref[$k].'" perform="'.$action.'" periodid="'.$periodid.'"  onclick="checkperiod(this);"><h6><i>'.$button.'</i></h6></button>';
-                        echo "</td>";
-                      }
-                    echo '</tr>';
-                }
-                ?>
+
+                <tr>
+                  <td><h4><center>Monday</center></h4></td>
+                  <td><button class="box" id="monday0" onclick="checkperiod(this,'monday');"></button></td>
+                  <td><button class="box" id="monday1" onclick="checkperiod(this,'monday');"></button></td>
+                    <td><button class="box" id="monday2" onclick="checkperiod(this,'monday');"></button></td>
+                      <td><button class="box" id="monday3" onclick="checkperiod(this,'monday');"></button></td>
+                        <td><button class="box" id="monday4" onclick="checkperiod(this,'monday');"></button></td>
+                          <td><button class="box" id="monday5" onclick="checkperiod(this,'monday');"></button></td>
+                            <td><button class="box" id="monday6" onclick="checkperiod(this,'monday');"></button></td>
+                              <td><button  class="box" id="monday7" onclick="checkperiod(this,'monday');"></button></td>
+                                <td><button class="box" id="monday8" onclick="checkperiod(this,'monday');"></button></td>
+                </tr>
+                <tr>
+                  <td><h4><center>Tuesday</center></h4></td>
+                  <td><button class="box" id="tuesday0" onclick="checkperiod(this,'tuesday');"></button></td>
+                  <td><button class="box" id="tuesday1" onclick="checkperiod(this,'tuesday');"></button></td>
+                    <td><button class="box" id="tuesday2" onclick="checkperiod(this,'tuesday');"></button></td>
+                      <td><button class="box" id="tuesday3" onclick="checkperiod(this,'tuesday');"></button></td>
+                        <td><button class="box" id="tuesday4" onclick="checkperiod(this,'tuesday');"></button></td>
+                          <td><button class="box" id="tuesday5" onclick="checkperiod(this,'tuesday');"></button></td>
+                            <td><button class="box" id="tuesday6" onclick="checkperiod(this,'tuesday');"></button></td>
+                              <td><button  class="box" id="tuesday7" onclick="checkperiod(this,'tuesday');"></button></td>
+                                <td><button class="box" id="tuesday8" onclick="checkperiod(this,'tuesday');"></button></td>
+                </tr>
+                <tr>
+                  <td><h4><center>Wednesday</center></h4></td>
+                  <td><button class="box" id="wednesday0" onclick="checkperiod(this,'wednesday');"></button></td>
+                  <td><button class="box" id="wednesday1" onclick="checkperiod(this,'wednesday');"></button></td>
+                    <td><button class="box" id="wednesday2" onclick="checkperiod(this,'wednesday');"></button></td>
+                      <td><button class="box" id="wednesday3" onclick="checkperiod(this,'wednesday');"></button></td>
+                        <td><button class="box" id="wednesday4" onclick="checkperiod(this,'wednesday');"></button></td>
+                          <td><button class="box" id="wednesday5" onclick="checkperiod(this,'wednesday');"></button></td>
+                            <td><button class="box" id="wednesday6" onclick="checkperiod(this,'wednesday');"></button></td>
+                              <td><button  class="box" id="wednesday7" onclick="checkperiod(this,'wednesday');"></button></td>
+                                <td><button class="box" id="wednesday8" onclick="checkperiod(this,'wednesday');"></button></td>
+                </tr>
+                <tr>
+                  <td><h4><center>Thursday</center></h4></td>
+                  <td><button class="box" id="thursday0" onclick="checkperiod(this,'thursday');"></button></td>
+                  <td><button class="box" id="thursday1" onclick="checkperiod(this,'thursday');"></button></td>
+                    <td><button class="box" id="thursday2" onclick="checkperiod(this,'thursday');"></button></td>
+                      <td><button class="box" id="thursday3" onclick="checkperiod(this,'thursday');"></button></td>
+                        <td><button class="box" id="thursday4" onclick="checkperiod(this,'thursday');"></button></td>
+                          <td><button class="box" id="thursday5" onclick="checkperiod(this,'thursday');"></button></td>
+                            <td><button class="box" id="thursday6" onclick="checkperiod(this,'thursday');"></button></td>
+                              <td><button  class="box" id="thursday7" onclick="checkperiod(this,'thursday');"></button></td>
+                                <td><button class="box" id="thursday8" onclick="checkperiod(this,'thursday');"></button></td>
+                </tr>
+                <tr>
+                  <td><h4><center>Friday</center></h4></td>
+                  <td><button class="box" id="friday0" onclick="checkperiod(this,'friday');"></button></td>
+                  <td><button class="box" id="friday1" onclick="checkperiod(this,'friday');"></button></td>
+                    <td><button class="box" id="friday2" onclick="checkperiod(this,'friday');"></button></td>
+                      <td><button class="box" id="friday3" onclick="checkperiod(this,'friday');"></button></td>
+                        <td><button class="box" id="friday4" onclick="checkperiod(this,'friday');"></button></td>
+                          <td><button class="box" id="friday5" onclick="checkperiod(this,'friday');"></button></td>
+                            <td><button class="box" id="friday6" onclick="checkperiod(this,'friday');"></button></td>
+                              <td><button  class="box" id="friday7" onclick="checkperiod(this,'friday');"></button></td>
+                                <td><button class="box" id="friday8" onclick="checkperiod(this,'friday');"></button></td>
+                </tr><tr>
+                  <td><h4><center>Saturday</center></h4></td>
+                  <td><button class="box" id="saturday0" onclick="checkperiod(this,'saturday');"></button></td>
+                  <td><button class="box" id="saturday1" onclick="checkperiod(this,'saturday');"></button></td>
+                    <td><button class="box" id="saturday2" onclick="checkperiod(this,'saturday');"></button></td>
+                      <td><button class="box" id="saturday3" onclick="checkperiod(this,'saturday');"></button></td>
+                        <td><button class="box" id="saturday4" onclick="checkperiod(this,'saturday');"></button></td>
+                          <td><button class="box" id="saturday5" onclick="checkperiod(this,'saturday');"></button></td>
+                            <td><button class="box" id="saturday6" onclick="checkperiod(this,'saturday');"></button></td>
+                              <td><button  class="box" id="saturday7" onclick="checkperiod(this,'saturday');"></button></td>
+                                <td><button class="box" id="saturday8" onclick="checkperiod(this,'saturday');"></button></td>
+                </tr>
           </table></center>
         </div>
       </div>

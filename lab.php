@@ -27,7 +27,7 @@ if (!empty($_POST['hall'])) {
   <button id="log_out"  class="btn btn-primary" onclick="window.location='logout.php'">
     <i class="fa fa-btn fa-sign-in"></i> Logout
   </button>
-  <button id="log_out"  class="btn btn-primary" onclick="window.location='table1.php'">
+  <button id="log_out"  class="btn btn-primary" onclick="window.location='home.php'">
     <i class="fa fa-btn fa-sign-in"></i> Home
   </button>
 
@@ -83,74 +83,74 @@ if (!empty($_POST['hall'])) {
 
                 <tr>
                   <td class="tab_row"><h4><center>Monday</center></h4></td>
-                  <td><button class="box" id="monday0" onclick="checkperiod(this,'monday');"></button></td>
-                  <td><button class="box" id="monday1" onclick="checkperiod(this,'monday');"></button></td>
-                    <td><button class="box" id="monday2" onclick="checkperiod(this,'monday');"></button></td>
-                      <td><button class="box" id="monday3" onclick="checkperiod(this,'monday');"></button></td>
-                        <td><button class="box" id="monday4" onclick="checkperiod(this,'monday');"></button></td>
-                          <td><button class="box" id="monday5" onclick="checkperiod(this,'monday');"></button></td>
-                            <td><button class="box" id="monday6" onclick="checkperiod(this,'monday');"></button></td>
-                              <td><button  class="box" id="monday7" onclick="checkperiod(this,'monday');"></button></td>
-                                <td><button class="box" id="monday8" onclick="checkperiod(this,'monday');"></button></td>
+                  <td><button class="box" id="monday0" onclick="checkperiod(this,'monday');">-</button></td>
+                  <td><button class="box" id="monday1" onclick="checkperiod(this,'monday');">-</button></td>
+                    <td><button class="box" id="monday2" onclick="checkperiod(this,'monday');">-</button></td>
+                      <td><button class="box" id="monday3" onclick="checkperiod(this,'monday');">-</button></td>
+                        <td><button class="box" id="monday4" onclick="checkperiod(this,'monday');">-</button></td>
+                          <td><button class="box" id="monday5" onclick="checkperiod(this,'monday');">-</button></td>
+                            <td><button class="box" id="monday6" onclick="checkperiod(this,'monday');">-</button></td>
+                              <td><button  class="box" id="monday7" onclick="checkperiod(this,'monday');">-</button></td>
+                                <td><button class="box" id="monday8" onclick="checkperiod(this,'monday');">-</button></td>
                 </tr>
                 <tr>
                   <td class="tab_row"><h4><center>Tuesday</center></h4></td>
-                  <td><button class="box" id="tuesday0" onclick="checkperiod(this,'tuesday');"></button></td>
-                  <td><button class="box" id="tuesday1" onclick="checkperiod(this,'tuesday');"></button></td>
-                    <td><button class="box" id="tuesday2" onclick="checkperiod(this,'tuesday');"></button></td>
-                      <td><button class="box" id="tuesday3" onclick="checkperiod(this,'tuesday');"></button></td>
-                        <td><button class="box" id="tuesday4" onclick="checkperiod(this,'tuesday');"></button></td>
-                          <td><button class="box" id="tuesday5" onclick="checkperiod(this,'tuesday');"></button></td>
-                            <td><button class="box" id="tuesday6" onclick="checkperiod(this,'tuesday');"></button></td>
-                              <td><button  class="box" id="tuesday7" onclick="checkperiod(this,'tuesday');"></button></td>
-                                <td><button class="box" id="tuesday8" onclick="checkperiod(this,'tuesday');"></button></td>
+                  <td><button class="box" id="tuesday0" onclick="checkperiod(this,'tuesday');">-</button></td>
+                  <td><button class="box" id="tuesday1" onclick="checkperiod(this,'tuesday');">-</button></td>
+                    <td><button class="box" id="tuesday2" onclick="checkperiod(this,'tuesday');">-</button></td>
+                      <td><button class="box" id="tuesday3" onclick="checkperiod(this,'tuesday');">-</button></td>
+                        <td><button class="box" id="tuesday4" onclick="checkperiod(this,'tuesday');">-</button></td>
+                          <td><button class="box" id="tuesday5" onclick="checkperiod(this,'tuesday');">-</button></td>
+                            <td><button class="box" id="tuesday6" onclick="checkperiod(this,'tuesday');">-</button></td>
+                              <td><button  class="box" id="tuesday7" onclick="checkperiod(this,'tuesday');">-</button></td>
+                                <td><button class="box" id="tuesday8" onclick="checkperiod(this,'tuesday');">-</button></td>
                 </tr>
                 <tr>
                   <td class="tab_row"><h4><center>Wednesday</center></h4></td>
-                  <td><button class="box" id="wednesday0" onclick="checkperiod(this,'wednesday');"></button></td>
-                  <td><button class="box" id="wednesday1" onclick="checkperiod(this,'wednesday');"></button></td>
-                    <td><button class="box" id="wednesday2" onclick="checkperiod(this,'wednesday');"></button></td>
-                      <td><button class="box" id="wednesday3" onclick="checkperiod(this,'wednesday');"></button></td>
-                        <td><button class="box" id="wednesday4" onclick="checkperiod(this,'wednesday');"></button></td>
-                          <td><button class="box" id="wednesday5" onclick="checkperiod(this,'wednesday');"></button></td>
-                            <td><button class="box" id="wednesday6" onclick="checkperiod(this,'wednesday');"></button></td>
-                              <td><button  class="box" id="wednesday7" onclick="checkperiod(this,'wednesday');"></button></td>
-                                <td><button class="box" id="wednesday8" onclick="checkperiod(this,'wednesday');"></button></td>
+                  <td><button class="box" id="wednesday0" onclick="checkperiod(this,'wednesday');">-</button></td>
+                  <td><button class="box" id="wednesday1" onclick="checkperiod(this,'wednesday');">-</button></td>
+                    <td><button class="box" id="wednesday2" onclick="checkperiod(this,'wednesday');">-</button></td>
+                      <td><button class="box" id="wednesday3" onclick="checkperiod(this,'wednesday');">-</button></td>
+                        <td><button class="box" id="wednesday4" onclick="checkperiod(this,'wednesday');">-</button></td>
+                          <td><button class="box" id="wednesday5" onclick="checkperiod(this,'wednesday');">-</button></td>
+                            <td><button class="box" id="wednesday6" onclick="checkperiod(this,'wednesday');">-</button></td>
+                              <td><button  class="box" id="wednesday7" onclick="checkperiod(this,'wednesday');">-</button></td>
+                                <td><button class="box" id="wednesday8" onclick="checkperiod(this,'wednesday');">-</button></td>
                 </tr>
                 <tr>
                   <td class="tab_row"><h4><center>Thursday</center></h4></td>
-                  <td><button class="box" id="thursday0" onclick="checkperiod(this,'thursday');"></button></td>
-                  <td><button class="box" id="thursday1" onclick="checkperiod(this,'thursday');"></button></td>
-                    <td><button class="box" id="thursday2" onclick="checkperiod(this,'thursday');"></button></td>
-                      <td><button class="box" id="thursday3" onclick="checkperiod(this,'thursday');"></button></td>
-                        <td><button class="box" id="thursday4" onclick="checkperiod(this,'thursday');"></button></td>
-                          <td><button class="box" id="thursday5" onclick="checkperiod(this,'thursday');"></button></td>
-                            <td><button class="box" id="thursday6" onclick="checkperiod(this,'thursday');"></button></td>
-                              <td><button  class="box" id="thursday7" onclick="checkperiod(this,'thursday');"></button></td>
-                                <td><button class="box" id="thursday8" onclick="checkperiod(this,'thursday');"></button></td>
+                  <td><button class="box" id="thursday0" onclick="checkperiod(this,'thursday');">-</button></td>
+                  <td><button class="box" id="thursday1" onclick="checkperiod(this,'thursday');">-</button></td>
+                    <td><button class="box" id="thursday2" onclick="checkperiod(this,'thursday');">-</button></td>
+                      <td><button class="box" id="thursday3" onclick="checkperiod(this,'thursday');">-</button></td>
+                        <td><button class="box" id="thursday4" onclick="checkperiod(this,'thursday');">-</button></td>
+                          <td><button class="box" id="thursday5" onclick="checkperiod(this,'thursday');">-</button></td>
+                            <td><button class="box" id="thursday6" onclick="checkperiod(this,'thursday');">-</button></td>
+                              <td><button  class="box" id="thursday7" onclick="checkperiod(this,'thursday');">-</button></td>
+                                <td><button class="box" id="thursday8" onclick="checkperiod(this,'thursday');">-</button></td>
                 </tr>
                 <tr>
                   <td class="tab_row"><h4><center>Friday</center></h4></td>
-                  <td><button class="box" id="friday0" onclick="checkperiod(this,'friday');"></button></td>
-                  <td><button class="box" id="friday1" onclick="checkperiod(this,'friday');"></button></td>
-                    <td><button class="box" id="friday2" onclick="checkperiod(this,'friday');"></button></td>
-                      <td><button class="box" id="friday3" onclick="checkperiod(this,'friday');"></button></td>
-                        <td><button class="box" id="friday4" onclick="checkperiod(this,'friday');"></button></td>
-                          <td><button class="box" id="friday5" onclick="checkperiod(this,'friday');"></button></td>
-                            <td><button class="box" id="friday6" onclick="checkperiod(this,'friday');"></button></td>
-                              <td><button  class="box" id="friday7" onclick="checkperiod(this,'friday');"></button></td>
-                                <td><button class="box" id="friday8" onclick="checkperiod(this,'friday');"></button></td>
+                  <td><button class="box" id="friday0" onclick="checkperiod(this,'friday');">-</button></td>
+                  <td><button class="box" id="friday1" onclick="checkperiod(this,'friday');">-</button></td>
+                    <td><button class="box" id="friday2" onclick="checkperiod(this,'friday');">-</button></td>
+                      <td><button class="box" id="friday3" onclick="checkperiod(this,'friday');">-</button></td>
+                        <td><button class="box" id="friday4" onclick="checkperiod(this,'friday');">-</button></td>
+                          <td><button class="box" id="friday5" onclick="checkperiod(this,'friday');">-</button></td>
+                            <td><button class="box" id="friday6" onclick="checkperiod(this,'friday');">-</button></td>
+                              <td><button  class="box" id="friday7" onclick="checkperiod(this,'friday');">-</button></td>
+                                <td><button class="box" id="friday8" onclick="checkperiod(this,'friday');">-</button></td>
                 </tr><tr>
                   <td class="tab_row"><h4><center>Saturday</center></h4></td>
-                  <td><button class="box" id="saturday0" onclick="checkperiod(this,'saturday');"></button></td>
-                  <td><button class="box" id="saturday1" onclick="checkperiod(this,'saturday');"></button></td>
-                    <td><button class="box" id="saturday2" onclick="checkperiod(this,'saturday');"></button></td>
-                      <td><button class="box" id="saturday3" onclick="checkperiod(this,'saturday');"></button></td>
-                        <td><button class="box" id="saturday4" onclick="checkperiod(this,'saturday');"></button></td>
-                          <td><button class="box" id="saturday5" onclick="checkperiod(this,'saturday');"></button></td>
-                            <td><button class="box" id="saturday6" onclick="checkperiod(this,'saturday');"></button></td>
-                              <td><button  class="box" id="saturday7" onclick="checkperiod(this,'saturday');"></button></td>
-                                <td><button class="box" id="saturday8" onclick="checkperiod(this,'saturday');"></button></td>
+                  <td><button class="box" id="saturday0" onclick="checkperiod(this,'saturday');">-</button></td>
+                  <td><button class="box" id="saturday1" onclick="checkperiod(this,'saturday');">-</button></td>
+                    <td><button class="box" id="saturday2" onclick="checkperiod(this,'saturday');">-</button></td>
+                      <td><button class="box" id="saturday3" onclick="checkperiod(this,'saturday');">-</button></td>
+                        <td><button class="box" id="saturday4" onclick="checkperiod(this,'saturday');">-</button></td>
+                          <td><button class="box" id="saturday5" onclick="checkperiod(this,'saturday');">-</button></td>
+                            <td><button class="box" id="saturday6" onclick="checkperiod(this,'saturday');">-</button></td>
+                              <td><button  class="box" id="saturday7" onclick="checkperiod(this,'saturday');">-</button></td>
+                                <td><button class="box" id="saturday8" onclick="checkperiod(this,'saturday');">-</button></td>
                 </tr>
           </table></center>
         </div>

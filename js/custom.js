@@ -104,7 +104,6 @@ function basi1(arr,dayn){
       var butname=dayn.concat(i);
 
         document.getElementById(butname).className="box";
-        document.getElementById(butname).innerHTML="-";
         document.getElementById(butname).disabled = true;
 
   }

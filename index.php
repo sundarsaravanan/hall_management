@@ -20,7 +20,7 @@ elseif (isset($_POST['username'])) {
 
 	$notmatch="<h4>*Username and Password do not match</h4>";
 
-	$sql = "SELECT id, username, password,role FROM staff WHERE username = '$usname' AND password='$paswd'";
+	$sql = "SELECT id, username, password,role,full_name FROM staff WHERE username = '$usname' AND password='$paswd'";
 	$query = mysqli_query($dbCon, $sql);
 	$row = mysqli_fetch_row($query);
 	$uid = $row[0];
@@ -34,8 +34,9 @@ elseif (isset($_POST['username'])) {
 		$_SESSION['username'] = $usname;
 		$_SESSION['id'] = $uid;
 		$_SESSION['role']=$role;
+		$_SESSION['usname']=$row[4];
 
-		header("Location: table1.php");
+		header("Location: home.php");
 	}
 
 }
@@ -44,7 +45,7 @@ elseif (isset($_POST['username'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kcet-Login</title>
+	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
 	<link rel="stylesheet" type="text/css" href="for_index.css">
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -54,16 +55,20 @@ elseif (isset($_POST['username'])) {
 <body>
 	<div class="container">
 
-		<div class="row" style="height:100px;"></div>
-		<div class="row"><center><h3>CSE DEPARTMENT</h3><br><h3>LCD PORTAL</h3></center></div>
+		<div class="row" style="height:120px;margin-top:30px;"><center><img src="logo.png" style="border:2px solid black;"/></center></div>
 		<hr>
+
+		<div class="row"><center><br><h3>Department of CSE<br><br>LCD Portal</h3></center></div>
 		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3">
-				<div class="panel panel-default">
-					<div class="panel-heading">Login</div>
-					<div class="panel-body">
+			<div class="col-lg-4 col-lg-offset-4" style="margin-top:30px;padding-bottom:20px;padding-top:20px;padding-left:20px;padding-right:20px;border: 0px solid black;border-radius: 20px;		box-shadow: 4px 4px 20px 0px #9C9C9C;">
+
 						<form id="form" action="index.php" method="post" class="form-horizontal" enctype="multipart/form-data" name="login_form" role="form" >
-							<div id="found"></div><br />
+							<div class="form-group">
+							 <div class="col-lg-12">
+							<h3>Login</h3>                                       </div>
+
+							</div>
+							<hr>
 							<div class="form-group">
 								<div class="col-lg-12">
 									<input id="textbox1" type="text" class="form-control" placeholder="Name"name="username" onblur="user1(document.getElementById('textbox1').value)">
@@ -84,8 +89,7 @@ elseif (isset($_POST['username'])) {
 								</button>
 							</div>
 						</form>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</div>

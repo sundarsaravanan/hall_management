@@ -26,8 +26,8 @@ date_default_timezone_set('Asia/Calcutta');
 
 </head>
 <body onload="bas('<?php echo $usname;?>');">
-  <button id="log_out"  class="btn btn-primary" onclick="window.location='logout.php'">
-    <i class="fa fa-btn fa-sign-in"></i> Logout
+  <button id="log_out"  class="btn btn-primary" onclick="window.location='home.php'">
+    <i class="fa fa-btn fa-sign-in"></i> Home
   </button>
   <?php
   if($_SESSION['role']=="admin"){
@@ -39,7 +39,7 @@ date_default_timezone_set('Asia/Calcutta');
    ?>
   <div class="container-fluid">
     <div class="row" style="height:30px;"></div>
-    <div class="row"><div class="col-lg-4 col-lg-offset-4"><center><h3>CSE DEPARTMENT - LCD PORTAL</h3></center></div></div>
+    <div class="row"><div class="col-lg-4 col-lg-offset-4"><center><h3> LCD PORTAL</h3></center></div></div>
     <hr>
     <div class="row">
       <div class="col-lg-5 col-lg-offset-7">
@@ -64,69 +64,69 @@ date_default_timezone_set('Asia/Calcutta');
   <div class="row"  >
     <div class="col-lg-12" >
       <br>
-              <table>
+            <center>  <table class="timetab">
                 <tr>
-                  <td><h4><center>Venue</center></h4></td>
-                  <td><h4><center>8.30  - 9.00 am</center></h4></td>
-                  <td><h4><center>9.00  - 9.50 am</center></h4></td>
-                  <td><h4><center>9.50  - 10.40 am</center></h4></td>
-                  <td><h4><center>11.00 - 11.50 am</center></h4></td>
-                  <td><h4><center>11.50 - 12.40 pm</center></h4></td>
-                  <td><h4><center>1.30  - 2.20 pm</center></h4></td>
-                  <td><h4><center>2.20  - 3.10 pm</center></h4></td>
-                  <td><h4><center>3.10  - 4.00 pm</center></h4></td>
-                  <td><h4><center>4.00  - 6.00 pm</center></h4></td>
+                  <td class="tab_col tab_row"><h3><center>Venue</center></h3></td>
+                  <td class="tab_col"><h3><center>0</center></h3></td>
+                  <td class="tab_col"><h3><center>I</center></h3></td>
+                  <td class="tab_col"><h3><center>II</center></h3></td>
+                  <td class="tab_col"><h3><center>III</center></h3></td>
+                  <td class="tab_col"><h3><center>IV</center></h3></td>
+                  <td class="tab_col"><h3><center>V</center></h3></td>
+                  <td class="tab_col"><h3><center>VI</center></h3></td>
+                  <td class="tab_col"><h3><center>VII</center></h3></td>
+                  <td class="tab_col"><h3><center>4-6 pm</center></h3></td>
                 </tr>
 
                 <tr>
-                  <td><h4><center>D1 Hall</center></h4></td>
-                  <td><button class="box" id="d1hall0" onclick="checkperiod1(this);"></button></td>
-                  <td><button class="box" id="d1hall1" onclick="checkperiod1(this);"></button></td>
-                    <td><button class="box" id="d1hall2" onclick="checkperiod1(this);"></button></td>
-                      <td><button class="box" id="d1hall3" onclick="checkperiod1(this);"></button></td>
-                        <td><button class="box" id="d1hall4" onclick="checkperiod1(this);"></button></td>
-                          <td><button class="box" id="d1hall5" onclick="checkperiod1(this);"></button></td>
-                            <td><button class="box" id="d1hall6" onclick="checkperiod1(this);"></button></td>
-                              <td><button  class="box" id="d1hall7" onclick="checkperiod1(this);"></button></td>
-                                <td><button class="box" id="d1hall8" onclick="checkperiod1(this);"></button></td>
+                  <td class="tab_row"><h4><center>D1 Hall</center></h4></td>
+                  <td><button class="box" id="d1hall0" onclick="checkperiod1(this);">-</button></td>
+                  <td><button class="box" id="d1hall1" onclick="checkperiod1(this);">-</button></td>
+                    <td><button class="box" id="d1hall2" onclick="checkperiod1(this);">-</button></td>
+                      <td><button class="box" id="d1hall3" onclick="checkperiod1(this);">-</button></td>
+                        <td><button class="box" id="d1hall4" onclick="checkperiod1(this);">-</button></td>
+                          <td><button class="box" id="d1hall5" onclick="checkperiod1(this);">-</button></td>
+                            <td><button class="box" id="d1hall6" onclick="checkperiod1(this);">-</button></td>
+                              <td><button  class="box" id="d1hall7" onclick="checkperiod1(this);">-</button></td>
+                                <td><button class="box" id="d1hall8" onclick="checkperiod1(this);">-</button></td>
                 </tr>
                 <tr>
-                  <td><h4><center>Old Cse Lab</center></h4></td>
-                  <td><button class="box" id="oldcse0" onclick="checkperiod1(this);"></button></td>
-                  <td><button class="box" id="oldcse1" onclick="checkperiod1(this);"></button></td>
-                    <td><button class="box" id="oldcse2" onclick="checkperiod1(this);"></button></td>
-                      <td><button class="box" id="oldcse3" onclick="checkperiod1(this);"></button></td>
-                        <td><button class="box" id="oldcse4" onclick="checkperiod1(this);"></button></td>
-                          <td><button class="box" id="oldcse5" onclick="checkperiod1(this);"></button></td>
-                            <td><button class="box" id="oldcse6" onclick="checkperiod1(this);"></button></td>
-                              <td><button  class="box" id="oldcse7" onclick="checkperiod1(this);"></button></td>
-                                <td><button class="box" id="oldcse8" onclick="checkperiod1(this);"></button></td>
+                  <td class="tab_row"><h4><center>Old Cse Lab</center></h4></td>
+                  <td><button class="box" id="oldcse0" onclick="checkperiod1(this);">-</button></td>
+                  <td><button class="box" id="oldcse1" onclick="checkperiod1(this);">-</button></td>
+                    <td><button class="box" id="oldcse2" onclick="checkperiod1(this);">-</button></td>
+                      <td><button class="box" id="oldcse3" onclick="checkperiod1(this);">-</button></td>
+                        <td><button class="box" id="oldcse4" onclick="checkperiod1(this);">-</button></td>
+                          <td><button class="box" id="oldcse5" onclick="checkperiod1(this);">-</button></td>
+                            <td><button class="box" id="oldcse6" onclick="checkperiod1(this);">-</button></td>
+                              <td><button  class="box" id="oldcse7" onclick="checkperiod1(this);">-</button></td>
+                                <td><button class="box" id="oldcse8" onclick="checkperiod1(this);">-</button></td>
                 </tr>
                 <tr>
-                  <td><h4><center>New Cse Lab</center></h4></td>
-                  <td><button class="box" id="newcse0" onclick="checkperiod1(this);"></button></td>
-                  <td><button class="box" id="newcse1" onclick="checkperiod1(this);"></button></td>
-                    <td><button class="box" id="newcse2" onclick="checkperiod1(this);"></button></td>
-                      <td><button class="box" id="newcse3" onclick="checkperiod1(this);"></button></td>
-                        <td><button class="box" id="newcse4" onclick="checkperiod1(this);"></button></td>
-                          <td><button class="box" id="newcse5" onclick="checkperiod1(this);"></button></td>
-                            <td><button class="box" id="newcse6" onclick="checkperiod1(this);"></button></td>
-                              <td><button  class="box" id="newcse7" onclick="checkperiod1(this);"></button></td>
-                                <td><button class="box" id="newcse8" onclick="checkperiod1(this);"></button></td>
+                  <td class="tab_row"><h4><center>New Cse Lab</center></h4></td>
+                  <td><button class="box" id="newcse0" onclick="checkperiod1(this);">-</button></td>
+                  <td><button class="box" id="newcse1" onclick="checkperiod1(this);">-</button></td>
+                    <td><button class="box" id="newcse2" onclick="checkperiod1(this);">-</button></td>
+                      <td><button class="box" id="newcse3" onclick="checkperiod1(this);">-</button></td>
+                        <td><button class="box" id="newcse4" onclick="checkperiod1(this);">-</button></td>
+                          <td><button class="box" id="newcse5" onclick="checkperiod1(this);">-</button></td>
+                            <td><button class="box" id="newcse6" onclick="checkperiod1(this);">-</button></td>
+                              <td><button  class="box" id="newcse7" onclick="checkperiod1(this);">-</button></td>
+                                <td><button class="box" id="newcse8" onclick="checkperiod1(this);">-</button></td>
                 </tr>
                 <tr>
-                  <td><h4><center>Movable</center></h4></td>
-                  <td><button class="box" id="movable0" onclick="checkperiod1(this);"></button></td>
-                  <td><button class="box" id="movable1" onclick="checkperiod1(this);"></button></td>
-                    <td><button class="box" id="movable2" onclick="checkperiod1(this);"></button></td>
-                      <td><button class="box" id="movable3" onclick="checkperiod1(this);"></button></td>
-                        <td><button class="box" id="movable4" onclick="checkperiod1(this);"></button></td>
-                          <td><button class="box" id="movable5" onclick="checkperiod1(this);"></button></td>
-                            <td><button class="box" id="movable6" onclick="checkperiod1(this);"></button></td>
-                              <td><button  class="box" id="movable7" onclick="checkperiod1(this);"></button></td>
-                                <td><button class="box" id="movable8" onclick="checkperiod1(this);"></button></td>
+                  <td  class="tab_row"><h4><center>Movable</center></h4></td>
+                  <td><button class="box" id="movable0" onclick="checkperiod1(this);">-</button></td>
+                  <td><button class="box" id="movable1" onclick="checkperiod1(this);">-</button></td>
+                    <td><button class="box" id="movable2" onclick="checkperiod1(this);">-</button></td>
+                      <td><button class="box" id="movable3" onclick="checkperiod1(this);">-</button></td>
+                        <td><button class="box" id="movable4" onclick="checkperiod1(this);">-</button></td>
+                          <td><button class="box" id="movable5" onclick="checkperiod1(this);">-</button></td>
+                            <td><button class="box" id="movable6" onclick="checkperiod1(this);">-</button></td>
+                              <td><button  class="box" id="movable7" onclick="checkperiod1(this);">-</button></td>
+                                <td><button class="box" id="movable8" onclick="checkperiod1(this);">-</button></td>
                 </tr>
-                </table>
+              </table></center>
 
 
               <!--

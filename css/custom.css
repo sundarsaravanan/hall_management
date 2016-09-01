@@ -1,5 +1,7 @@
 
-
+.container-fluid{
+	height:900px;
+}
 #form {
 	margin: auto;
 	width: 200px;
@@ -8,48 +10,53 @@
 
 .box {
     background-color:white;
-    width:80px;
-    height:75px;
-
+    width:70px;
+    height:60px;
     border:solid black 2px;
     border-radius: 15px;
 		font-style: italic;
+		box-shadow: 2px 2px 10px 1px #9C9C9C;
 
 }
 
 .red{
     background-color:#F82B2B;
-    width:80px;
-    height:75px;
+    width:70px;
+    height:60px;
     border:solid black 2px;
     border-radius: 15px;
 		color:black;
 		font-style: italic;
-		font-size: 40px;
-padding-top: 10px;
+		font-size: 25px;
+		padding-top: 7px;
+		box-shadow: 2px 2px 10px 1px #9C9C9C;
+
 }
 
 .green{
     background-color:lightgreen;
-    width:80px;
-    height:75px;
+    width:70px;
+    height:60px;
     border:solid black 2px;
     border-radius: 15px;
 		font-style: italic;
-font-size: 40px;
-padding-top: 10px;
+		font-size: 25px;
+		padding-top: 7px;
+		box-shadow: 2px 2px 10px 1px #9C9C9C;
 
 }
 
 .blue{
     background-color:#0699FB;
-    width:80px;
-    height:75px;
+    width:70px;
+    height:60px;
     border:solid black 2px;
     border-radius: 15px;
 		color:white;
 		font-style: italic;
-		font-size: 30px;
+		font-size: 20px;
+		box-shadow: 2px 2px 10px 2px #9C9C9C;
+
 
 }
 
@@ -59,7 +66,7 @@ padding-top: 10px;
     margin-top: 40px;
 }
 
-table td{
+.timetab td{
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 20px;
@@ -69,7 +76,53 @@ button:focus {
   outline: none;
 }
 
-th, td {
-    border-bottom: 1px solid #ddd;
+.timetab {
+border-collapse: collapse;
+    border-radius: 30px;
 
+		box-shadow: 4px 4px 20px 0px #9C9C9C;
+}
+
+
+.tab_row {
+	border-right: 2px dashed #000;
+
+}
+
+.tab_col{
+	border-bottom: 2px dashed #000;
+}
+.timetab td{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.logtab th,td{
+	text-align:center;
+
+}
+
+.logtab th{
+	border:2px solid black;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	font-size: 18px;
+}
+
+.logtab td{
+	border:2px solid black;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.logtab{
+	box-shadow: 1px 1px 20px 0px #9C9C9C;
 }

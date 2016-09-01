@@ -26,7 +26,6 @@ function basi(ar,halln,name1){
       var butname=halln.concat(i);
 
         document.getElementById(butname).className="box";
-        document.getElementById(butname).innerHTML="-";
         document.getElementById(butname).disabled = true;
 
     }

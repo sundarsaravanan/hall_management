@@ -25,38 +25,38 @@ date_default_timezone_set('Asia/Calcutta');
   <script type="text/javascript" src="js/custom.js"></script>
 
 </head>
-<body onload="bas('<?php echo $usname;?>');">
-  <button id="log_out"  class="btn btn-primary" onclick="window.location='home.php'">
-    <i class="fa fa-btn fa-sign-in"></i> Home
-  </button>
-  <?php
-  if($_SESSION['role']=="admin"){
-    echo "<button id='log_out'  class='btn btn-primary' onclick='edit();'>
-      <i class='fa fa-btn fa-sign-in'></i> Edit
-    </button>";
-  }
+<body onload="bas('<?php echo $usname;?>');" style="background-color:#ffffff;">
 
-   ?>
+
   <div class="container-fluid">
-    <div class="row" style="height:30px;"></div>
-    <div class="row"><div class="col-lg-4 col-lg-offset-4"><center><h3> LCD PORTAL</h3></center></div></div>
-    <hr>
+    <div class="row" style="border-bottom:1px solid black;padding-bottom:20px;margin-bottom:30px;background-color:#ffffff;">
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-primary " style="float:left;margin-top:30px;font-size:18px;" onclick="window.location='logout.php'"> Logout
+        </button>
+      </div>
+      <div class="col-lg-8"style="margin-top:20px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#000000;">PERSONAL LOG</h2></center></div>
+      <div class="col-lg-2">
+
+        <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
+            style="font-size: 20px;"></span>
+        </button>
+        
+      </div>
+    </div>
+
+
     <div class="row">
       <div class="col-lg-5 col-lg-offset-7">
-        <form action="table.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
-          <div class="form-group">
-            <label for="username" class="col-lg-4 control-label">Choose date</label>
+        <form action="table1.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
+            <label for="username" class="col-lg-3 control-label" style="font-family:serif;font-size:18px;">Choose date</label>
             <div class="col-lg-5">
              <input type="date" class="form-control" name="date" placeholder="Choose Date" value="<?php echo $_SESSION['date']?>">
-           </div>
-         </div>
-         <div class="form-group">
-          <div class="col-lg-6 col-lg-offset-4">
-            <button type="submit" class="btn btn-primary">
+</div>
+<div class="col-lg-3">
+            <button type="submit" class="btn btn-primary" >
               <i class="fa fa-btn fa-sign-in"></i> Check
             </button>
           </div>
-        </div>
       </form>
     </div>
   </div>
@@ -79,7 +79,7 @@ date_default_timezone_set('Asia/Calcutta');
                 </tr>
 
                 <tr>
-                  <td class="tab_row"><h4><center>D1 Hall</center></h4></td>
+                  <td class="tab_row"><h3><center>D1 Hall</center></h3></td>
                   <td><button class="box" id="d1hall0" onclick="checkperiod1(this);">-</button></td>
                   <td><button class="box" id="d1hall1" onclick="checkperiod1(this);">-</button></td>
                     <td><button class="box" id="d1hall2" onclick="checkperiod1(this);">-</button></td>
@@ -91,7 +91,7 @@ date_default_timezone_set('Asia/Calcutta');
                                 <td><button class="box" id="d1hall8" onclick="checkperiod1(this);">-</button></td>
                 </tr>
                 <tr>
-                  <td class="tab_row"><h4><center>Old Cse Lab</center></h4></td>
+                  <td class="tab_row"><h3><center>Old Cse Lab</center></h3></td>
                   <td><button class="box" id="oldcse0" onclick="checkperiod1(this);">-</button></td>
                   <td><button class="box" id="oldcse1" onclick="checkperiod1(this);">-</button></td>
                     <td><button class="box" id="oldcse2" onclick="checkperiod1(this);">-</button></td>
@@ -103,7 +103,7 @@ date_default_timezone_set('Asia/Calcutta');
                                 <td><button class="box" id="oldcse8" onclick="checkperiod1(this);">-</button></td>
                 </tr>
                 <tr>
-                  <td class="tab_row"><h4><center>New Cse Lab</center></h4></td>
+                  <td class="tab_row"><h3><center>New Cse Lab</center></h3></td>
                   <td><button class="box" id="newcse0" onclick="checkperiod1(this);">-</button></td>
                   <td><button class="box" id="newcse1" onclick="checkperiod1(this);">-</button></td>
                     <td><button class="box" id="newcse2" onclick="checkperiod1(this);">-</button></td>
@@ -115,7 +115,7 @@ date_default_timezone_set('Asia/Calcutta');
                                 <td><button class="box" id="newcse8" onclick="checkperiod1(this);">-</button></td>
                 </tr>
                 <tr>
-                  <td  class="tab_row"><h4><center>Movable</center></h4></td>
+                  <td  class="tab_row"><h3><center>Movable</center></h3></td>
                   <td><button class="box" id="movable0" onclick="checkperiod1(this);">-</button></td>
                   <td><button class="box" id="movable1" onclick="checkperiod1(this);">-</button></td>
                     <td><button class="box" id="movable2" onclick="checkperiod1(this);">-</button></td>

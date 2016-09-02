@@ -131,7 +131,6 @@ input[type=text]{
 	border-radius: 30px;
 padding-left: 30px;
 font-size: 15px;
-width:250px;
 
 }
 
@@ -140,6 +139,5 @@ input[type=password]{
 	border-radius: 30px;
 	padding-left: 30px;
 	font-size: 15px;
-	width:250px;
 
 }

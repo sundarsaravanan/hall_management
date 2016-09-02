@@ -23,25 +23,25 @@ if (!empty($_POST['hall'])) {
   <script type="text/javascript" src="js/custom.js"></script>
 </head>
 <body onload="bas_lab();">
+  <div class="row" style="border-bottom:1px solid black;padding-bottom:20px;margin-bottom:30px;background-color:#ffffff;">
+    <div class="col-lg-2">
+      <button type="button" class="btn btn-primary " style="float:left;margin-top:30px;font-size:18px;margin-left:40px;" onclick="window.location='logout.php'"> Logout
+      </button>
+    </div>
+    <div class="col-lg-8"style="margin-top:20px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#000000;">ADMIN PORTAL</h2></center></div>
+    <div class="col-lg-2">
 
-  <button id="log_out"  class="btn btn-primary" onclick="window.location='logout.php'">
-    <i class="fa fa-btn fa-sign-in"></i> Logout
-  </button>
-  <button id="log_out"  class="btn btn-primary" onclick="window.location='home.php'">
-    <i class="fa fa-btn fa-sign-in"></i> Home
-  </button>
+      <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;margin-right:20px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
+          style="font-size: 20px;"></span>
+      </button>
 
-  <div class="container-fluid">
-    <div class="row" style="height:30px;"></div>
-    <div class="row"><div class="col-md-4 col-md-offset-4"><center><h3>Admin Portal</h3></center></div></div>
+    </div>
+  </div>
 
-    <hr>
-
-    <div class="row">
-      <div class="col-md-5 col-md-offset-7">
+    <div class="row" style="margin-bottom:40px;">
+      <div class="col-md-4 col-md-offset-8">
         <form action="lab.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
-          <div class="form-group">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-6">
               <select class="form-control" name="hall" >
                   <option <?php if($_SESSION['hall']=="oldcse") echo 'selected="selected"'; ?>>Select Hall</option>
 					        <option value="oldcse" <?php if($_SESSION['hall']=="oldcse") echo 'selected="selected"'; ?>>Oldcse Lab</option>
@@ -50,13 +50,10 @@ if (!empty($_POST['hall'])) {
                   <option value="movable"<?php if($_SESSION['hall']=="movable") echo 'selected="selected"'; ?>>Movable</option>
 					      </select>
                </div>
-         </div>
-         <div class="form-group">
-          <div class="col-md-6 col-md-offset-4">
+          <div class="col-md-6">
             <button type="submit" class="btn btn-primary">
               <i class="fa fa-btn fa-sign-in"></i> Check
             </button>
-          </div>
         </div>
       </form>
     </div>
@@ -82,7 +79,7 @@ if (!empty($_POST['hall'])) {
                 </tr>
 
                 <tr>
-                  <td class="tab_row"><h4><center>Monday</center></h4></td>
+                  <td class="tab_row"><h3><center>Monday</center></h3></td>
                   <td><button class="box" id="monday0" onclick="checkperiod(this,'monday');">-</button></td>
                   <td><button class="box" id="monday1" onclick="checkperiod(this,'monday');">-</button></td>
                     <td><button class="box" id="monday2" onclick="checkperiod(this,'monday');">-</button></td>
@@ -94,7 +91,7 @@ if (!empty($_POST['hall'])) {
                                 <td><button class="box" id="monday8" onclick="checkperiod(this,'monday');">-</button></td>
                 </tr>
                 <tr>
-                  <td class="tab_row"><h4><center>Tuesday</center></h4></td>
+                  <td class="tab_row"><h3><center>Tuesday</center></h3></td>
                   <td><button class="box" id="tuesday0" onclick="checkperiod(this,'tuesday');">-</button></td>
                   <td><button class="box" id="tuesday1" onclick="checkperiod(this,'tuesday');">-</button></td>
                     <td><button class="box" id="tuesday2" onclick="checkperiod(this,'tuesday');">-</button></td>
@@ -106,7 +103,7 @@ if (!empty($_POST['hall'])) {
                                 <td><button class="box" id="tuesday8" onclick="checkperiod(this,'tuesday');">-</button></td>
                 </tr>
                 <tr>
-                  <td class="tab_row"><h4><center>Wednesday</center></h4></td>
+                  <td class="tab_row"><h3><center>Wednesday</center></h3></td>
                   <td><button class="box" id="wednesday0" onclick="checkperiod(this,'wednesday');">-</button></td>
                   <td><button class="box" id="wednesday1" onclick="checkperiod(this,'wednesday');">-</button></td>
                     <td><button class="box" id="wednesday2" onclick="checkperiod(this,'wednesday');">-</button></td>
@@ -118,7 +115,7 @@ if (!empty($_POST['hall'])) {
                                 <td><button class="box" id="wednesday8" onclick="checkperiod(this,'wednesday');">-</button></td>
                 </tr>
                 <tr>
-                  <td class="tab_row"><h4><center>Thursday</center></h4></td>
+                  <td class="tab_row"><h3><center>Thursday</center></h3></td>
                   <td><button class="box" id="thursday0" onclick="checkperiod(this,'thursday');">-</button></td>
                   <td><button class="box" id="thursday1" onclick="checkperiod(this,'thursday');">-</button></td>
                     <td><button class="box" id="thursday2" onclick="checkperiod(this,'thursday');">-</button></td>
@@ -130,7 +127,7 @@ if (!empty($_POST['hall'])) {
                                 <td><button class="box" id="thursday8" onclick="checkperiod(this,'thursday');">-</button></td>
                 </tr>
                 <tr>
-                  <td class="tab_row"><h4><center>Friday</center></h4></td>
+                  <td class="tab_row"><h3><center>Friday</center></h3></td>
                   <td><button class="box" id="friday0" onclick="checkperiod(this,'friday');">-</button></td>
                   <td><button class="box" id="friday1" onclick="checkperiod(this,'friday');">-</button></td>
                     <td><button class="box" id="friday2" onclick="checkperiod(this,'friday');">-</button></td>
@@ -141,7 +138,7 @@ if (!empty($_POST['hall'])) {
                               <td><button  class="box" id="friday7" onclick="checkperiod(this,'friday');">-</button></td>
                                 <td><button class="box" id="friday8" onclick="checkperiod(this,'friday');">-</button></td>
                 </tr><tr>
-                  <td class="tab_row"><h4><center>Saturday</center></h4></td>
+                  <td class="tab_row"><h3><center>Saturday</center></h3></td>
                   <td><button class="box" id="saturday0" onclick="checkperiod(this,'saturday');">-</button></td>
                   <td><button class="box" id="saturday1" onclick="checkperiod(this,'saturday');">-</button></td>
                     <td><button class="box" id="saturday2" onclick="checkperiod(this,'saturday');">-</button></td>

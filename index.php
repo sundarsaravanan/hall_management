@@ -53,33 +53,33 @@ elseif (isset($_POST['username'])) {
 	<script type="text/javascript" src="in_head.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 
-		<div class="row" style="height:120px;margin-top:30px;"><center><img src="logo.png" style="border:2px solid black;"/></center></div>
-		<hr>
+		<div class="row" style="height:180px;padding-top:30px;background-color:#433498;"><center><img src="logo.png" height="140px"width="800px"/></center></div>
 
-		<div class="row"><center><br><h3>Department of CSE<br><br>LCD Portal</h3></center></div>
+
+		<div class="row"><center><br><h3 style="letter-spacing:5px;font-family:serif;font-size:25px;">Department   of  Computer Science and Engineering<br><br>LCD Portal</h3></center></div>
 		<div class="row">
-			<div class="col-lg-4 col-lg-offset-4" style="margin-top:30px;padding-bottom:20px;padding-top:20px;padding-left:20px;padding-right:20px;border: 0px solid black;border-radius: 20px;		box-shadow: 4px 4px 20px 0px #9C9C9C;">
+			<div class="col-lg-4 col-lg-offset-4" style="margin-top:30px;padding-bottom:20px;padding-top:10px;padding-left:60px;padding-right:60px;border: 1px solid black;border-radius: 20px;		box-shadow: 5px 5px 20px 4px #9C9C9C; background-color:#f5cc85">
 
 						<form id="form" action="index.php" method="post" class="form-horizontal" enctype="multipart/form-data" name="login_form" role="form" >
 							<div class="form-group">
 							 <div class="col-lg-12">
-							<h3>Login</h3>                                       </div>
+							<h3 style="letter-spacing:5px;font-family:serif;font-size:25px;"><center>Login</center></h3>                                       </div>
 
 							</div>
 							<hr>
 							<div class="form-group">
 								<div class="col-lg-12">
-									<input id="textbox1" type="text" class="form-control" placeholder="Name"name="username" onblur="user1(document.getElementById('textbox1').value)">
+									<center><input id="textbox1" type="text"  class="form-control" placeholder="Name"name="username" onblur="user1(document.getElementById('textbox1').value)"></center>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-lg-12">
-									<input id="textbox" type="password" class="form-control" placeholder="Password" name="password">
+								<center>	<input id="textbox" type="password" class="form-control" placeholder="Password" name="password"></center>
 								</div>
 							</div>
-
+<hr>
 							<div class="form-group">
 								<button type="submit" class="col-lg-4 col-lg-offset-1 btn btn-primary">
 									<i class="fa fa-btn fa-sign-in"></i> Login

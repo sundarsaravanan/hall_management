@@ -4,6 +4,9 @@ function staff_per() {
 function edit() {
   window.location.assign("lab.php")
 }
+function call_home() {
+  window.location.assign("lab.php")
+}
 var xmlhttp;
 xmlhttp=GetXmlHttpObject();
 function GetXmlHttpObject(){

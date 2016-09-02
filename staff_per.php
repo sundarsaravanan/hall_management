@@ -27,44 +27,48 @@ if (!empty($_POST["username1"])  && !empty($_POST["password1"])) {
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Kcet-Login</title>
-		<link rel="stylesheet" type="text/css" href="css/custom.css">
-		<link rel="stylesheet" type="text/css" href="for_index.css">
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<link rel="stylesheet" type="text/css" href="for_index.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-		<script type="text/javascript" src="in_head.js"></script>
-	</head>
-	<body>
-		<div class="container">
+	<script type="text/javascript" src="in_head.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
 
-			<div class="row" style="height:100px;"></div>
-			<div class="row"><center><h1>LCD PORTAL</h1></center></div>
-			<hr>
-			<div class="row">
-				<div class="col-lg-6 col-lg-offset-3">
-		            <div class="panel panel-default">
-		                <div class="panel-heading">Authentication</div>
-		               		<div class="panel-body">
+		<div class="row" style="height:180px;padding-top:30px;background-color:#433498;"><center><img src="logo.png" height="140px"width="800px"/></center></div>
+
+
+		<div class="row"><center><br><h3 style="letter-spacing:5px;font-family:serif;font-size:25px;">Department   of  Computer Science and Engineering<br><br>LCD Portal</h3></center></div>
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4" style="margin-top:30px;padding-bottom:20px;padding-top:10px;padding-left:60px;padding-right:60px;border: 1px solid black;border-radius: 20px;		box-shadow: 5px 5px 20px 4px #9C9C9C; background-color:#f5cc85">
+
 		                        <form id="form" action="staff_per.php" method="post" class="form-horizontal" enctype="multipart/form-data" name="login_form" role="form" >
-                              <div id="found"></div><br />
-									              <div class="form-group">
-		                         	 	<div class="col-lg-10">
-											<input id="textbox1" type="text" class="form-control" placeholder="Name" name="username1" onblur="user1(document.getElementById('textbox1').value)">
+															<div class="form-group">
+															 <div class="col-lg-12">
+															<h3 style="letter-spacing:5px;font-family:serif;font-size:25px;"><center>Authentication</center></h3>                                       </div>
+
+															</div>
+															<hr>
+															  <div class="form-group">
+		                         	 	<div class="col-lg-12">
+										<center>	<input id="textbox1" type="text" class="form-control" placeholder="Name" name="username1" onblur="user1(document.getElementById('textbox1').value)"></center>
 		                          		</div>
 		                         	 </div>
 		                         	 <div class="form-group">
-		                         	 	<div class="col-lg-10">
-											<input id="textbox" type="password" class="form-control" placeholder="Password" name="password1">
+		                         	 	<div class="col-lg-12">
+											<center><input id="textbox" type="password" class="form-control" placeholder="Password" name="password1"></center>
 		                          		</div>
 		                         	 </div>
-
+<hr>
 		                         	 <div class="form-group">
-                                 <div class="col-lg-6 col-lg-offset-2">
+                                 <div class="col-lg-4 col-lg-offset-4">
 
-		                                	<button type="submit" class="btn btn-primary">
+		                                <center>	<button type="submit" class="btn btn-primary">
 		                                    	<i class="fa fa-btn fa-sign-in"></i> Proceed
-		                                	</button>
+		                                	</button></center>
                                     </div>
 
 		                        	</div>
@@ -72,8 +76,7 @@ if (!empty($_POST["username1"])  && !empty($_POST["password1"])) {
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+
 
 	    <script src="js/bootstrap.min.js"></script>
 

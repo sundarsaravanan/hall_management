@@ -32,62 +32,63 @@ if ($pass2==$pass3) {
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Kcet-Login</title>
-		<link rel="stylesheet" type="text/css" href="css/custom.css">
-		<link rel="stylesheet" type="text/css" href="for_index.css">
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<link rel="stylesheet" type="text/css" href="for_index.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-		<script type="text/javascript" src="in_head.js"></script>
-	</head>
-	<body>
-    <div class="row" style="height:100px;"><button id="log_out"  class="btn btn-primary" onclick="window.location='logout.php'">
-        <i class="fa fa-btn fa-sign-in"></i> Logout
-    </button>
+	<script type="text/javascript" src="in_head.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+
+		<div class="row" style="height:180px;padding-top:30px;background-color:#433498;">
+
+
+      <div class="col-lg-8 col-lg-offset-2"><center><img src="logo.png" height="140px"width="800px"/></center></div>
+      <div class="col-lg-2" style="margin-top:40px;"><button type="button" class="btn btn-info " style="float:left;font-size:18px;" onclick="window.location='logout.php'">Logout
+      </button></div>
 </div>
-		<div class="container">
 
+		<div class="row"><center><br><h3 style="letter-spacing:5px;font-family:serif;font-size:25px;">Department   of  Computer Science and Engineering<br><br>LCD Portal</h3></center></div>
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4" style="margin-top:30px;padding-bottom:20px;padding-top:10px;padding-left:60px;padding-right:60px;border: 1px solid black;border-radius: 20px;		box-shadow: 5px 5px 20px 4px #9C9C9C; background-color:#f5cc85">
 
-			<div class="row"><center><h1>LCD PORTAL</h1></center></div>
-			<hr>
-			<div class="row">
-				<div class="col-lg-6 col-lg-offset-3">
-		            <div class="panel panel-default">
-		                <div class="panel-heading">Register</div>
-		               		<div class="panel-body">
 		                        <form  action="register.php" method="post" class="form-horizontal" enctype="multipart/form-data" name="login_form" role="form" >
-                              <div id="hid"></div><br />
-									              <div class="form-group">
-		                         	 	<label for="username" class="col-lg-offset-1 col-lg-4 control-label">Full Name</label>
-		                         	 	<div class="col-lg-6">
-											                       <input id="textbox5" type="text" class="form-control" name="name1" onblur="user1(document.getElementById('textbox1').value)">
+                              <div class="form-group">
+                               <div class="col-lg-12">
+                              <h3 style="letter-spacing:5px;font-family:serif;font-size:25px;"><center>Registration</center></h3>                                       </div>
+
+                              </div>
+<hr>
+                                <div class="form-group">
+		                         	 	<div class="col-lg-12">
+											                    <center>   <input id="textbox5" type="text" placeholder="Full Name" class="form-control" name="name1" onblur="user1(document.getElementById('textbox1').value)"></center>
 		                          		</div>
 		                         	 </div>
 
                                <div class="form-group">
-		                         	 	<label for="password" class="col-lg-offset-1 col-lg-4 control-label">Username</label>
-		                         	 	<div class="col-lg-6">
-											                       <input id="textbox2" type="text" class="form-control" name="username2" onBlur="check(document.getElementById('textbox2').value)">
+		                         	 	<div class="col-lg-12">
+											                      <center>  <input id="textbox2" type="text" placeholder="Username" class="form-control" name="username2" onBlur="check(document.getElementById('textbox2').value)"></center>
 		                          		</div>
 		                         	 </div>
 
                                <div class="form-group">
-                               <label for="password" class="col-lg-offset-1 col-lg-4 control-label">Password</label>
-                               <div class="col-lg-6">
-                                            <input id="textbox3" type="password" class="form-control" name="password2">
+                               <div class="col-lg-12">
+                                          <center>   <input id="textbox3" type="password" placeholder="Password" class="form-control" name="password2"></center>
                                  </div>
                               </div>
 
                               <div class="form-group">
-                               <label for="password" class=" col-lg-offset-1 col-lg-4 control-label">Confirm Password</label>
-                               <div class="col-lg-6">
-                                            <input id="textbox4" type="password" class="form-control" name="password3">
+                               <div class="col-lg-12">
+                                          <center>   <input id="textbox4" type="password" class="form-control" placeholder="Confirm Password" name="password3"></center>
                                  </div>
                               </div>
 
-
+<hr>
                                <div class="form-group">
-                                 <div class="col-lg-6 col-lg-offset-5">
+                                 <div class="col-lg-4 col-lg-offset-4">
 
 		                                	<button type="submit" class="btn btn-primary" onclick="success_reg();">
 		                                    	<i class="fa fa-btn fa-sign-in"></i> Register

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['id'])) {
-  $usname = $_SESSION['username'];
+  $usname = $_SESSION['usname'];
   $date=$_SESSION['date'];
   include_once("dbconnect.php");
 }
@@ -34,13 +34,13 @@ date_default_timezone_set('Asia/Calcutta');
         <button type="button" class="btn btn-primary " style="float:left;margin-top:30px;font-size:18px;" onclick="window.location='logout.php'"> Logout
         </button>
       </div>
-      <div class="col-lg-8"style="margin-top:20px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#000000;">PERSONAL LOG</h2></center></div>
+      <div class="col-lg-8"style="margin-top:20px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#000000;">BOOKING</h2></center></div>
       <div class="col-lg-2">
 
         <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
             style="font-size: 20px;"></span>
         </button>
-        
+
       </div>
     </div>
 

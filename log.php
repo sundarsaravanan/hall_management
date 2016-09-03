@@ -1,6 +1,13 @@
 <?php
 session_start();
 if (isset($_SESSION['id'])) {
+
+	$uid = $_SESSION['id'];
+	$usname = $_SESSION['usname'];
+	$date=$_SESSION['date'];
+	include_once("dbconnect.php");
+
+
 }
 else{
 	 header("Location: index.php");
@@ -50,69 +57,25 @@ else{
             <tr>
           </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>29/08/2016</td>
-                <td>AAA</td>
-                <td>III</td>
-                <td>CS6402</td>
-                <td>Theory of Computation</td>
-                <td>Old Cse Lab</td>
-
-                <td>III</td>
-                <td>B</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>29/08/2016</td>
-                <td>BBB</td>
-                <td>III</td>
-                <td>CS6402</td>
-                <td>Theory of Computation</td>
-                <td>Old Cse Lab</td>
-
-                <td>III</td>
-                <td>B</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>29/08/2016</td>
-                <td>CCC</td>
-
-                <td>III</td>
-                <td>CS6402</td>
-                <td>Theory of Computation</td>
-                <td>Old Cse Lab</td>
-
-                <td>III</td>
-                <td>B</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>29/08/2016</td>
-                <td>DDD</td>
-
-                <td>III</td>
-                <td>CS6402</td>
-                <td>Theory of Computation</td>
-                <td>Old Cse Lab</td>
-
-                <td>III</td>
-                <td>B</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>29/08/2016</td>
-                <td>FFF</td>
-
-                <td>III</td>
-                <td>CS6402</td>
-                <td>Theory of Computation</td>
-                <td>Old Cse Lab</td>
-
-                <td>III</td>
-                <td>B</td>
-              </tr>
+							<?php
+		$sql="select * from booking where not staffid='0' and not staffid='2' order by date desc";
+							$query = mysqli_query($dbCon, $sql);
+							$k=1;
+while($row = mysqli_fetch_array($query)){
+	echo '<tr>';
+	echo "<td>$k. </td>";
+	echo "<td> $row[1] </td>";
+	echo "<td> $row[5] </td>";
+	echo "<td> $row[3] </td>";
+	echo "<td> $row[6] </td>";
+	echo "<td> $row[7] </td>";
+	echo "<td> $row[4] </td>";
+	echo "<td> $row[8] </td>";
+	echo "<td> $row[9] </td>";
+	echo '</tr>';
+$k++;
+}
+							?>
             </tbody>
           </table>
 

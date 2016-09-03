@@ -5,7 +5,7 @@
         $periodid=$_POST["period"];
         $day=$_POST["dayn"];
         $hall=$_SESSION["hall"];
-        $sql = "update lab set $periodid=1 where day='$day' and hall='$hall'";
+        $sql = "update lab set $periodid=2 where day='$day' and hall='$hall'";
       	$query = mysqli_query($dbCon, $sql);
   }
   else {

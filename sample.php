@@ -8,10 +8,14 @@ if(empty($date)){
 echo "-1";
 }
 else{
-$sql = "SELECT * FROM log WHERE date='$date' and hall='$hall'";
+$sql = "SELECT staffid FROM booking where lcd_type='$hall' and date='$date' ";
 $query = mysqli_query($dbCon, $sql);
-$row = mysqli_fetch_row($query);
-echo json_encode($row);
+$jsonData = array();
+while ($array = mysqli_fetch_row($query)) {
+    $jsonData[] = $array;
+}
+
+echo json_encode($jsonData);
 }
 }
 else {

@@ -60,7 +60,7 @@ else{
                                     <hr>
         								<div class="form-group">
         	                         	 	<div class="col-lg-12">
-        										<input type="text" class="form-control" name="pass" placeholder="Subject Code" >
+        										<input type="text" id="code" class="form-control"  placeholder="Subject Code" >
         	                          		</div>
         	                         	 </div>
 
@@ -68,13 +68,13 @@ else{
 
         	                         	 <div class="form-group">
         	                         	 	<div class="col-lg-12">
-        										<input type="text" class="form-control" name="pass" placeholder="Subject Name">
+        										<input type="text" id="subname" class="form-control"  placeholder="Subject Name">
         	                          		</div>
         	                         	 </div>
 
                                      <div class="form-group">
         	                         	 	<div class="col-lg-12">
-        										<input type="text" class="form-control" name="pass" placeholder="Hall Number  (  incase of movable  )">
+        										<input type="text" class="form-control" id="movable" placeholder="Hall Number ">
         	                          		</div>
         	                         	 </div>
 
@@ -113,7 +113,7 @@ else{
         	                         	 <div class="form-group">
         	                            	<div class="col-lg-12 ">
         		                            	<div class="col-lg-4 col-lg-offset-4">
-        		                                	<button type="button" class="btn btn-primary" onclick="window.location='table1.php'">
+        		                                	<button type="button" class="btn btn-primary" onclick="home_form()">
         		                                    	<i class="fa fa-btn fa-sign-in"></i> Book
         		                                	</button>
         		                            	</div>

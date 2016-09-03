@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['id'])) {
 
 	$uid = $_SESSION['id'];
-	$usname = $_SESSION['username'];
+	$usname = $_SESSION['usname'];
 	header("Location: table.php");
 }
 elseif (isset($_POST['username'])) {

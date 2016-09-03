@@ -23,6 +23,8 @@ function GetXmlHttpObject(){
 var hall_ref=["d1hall","oldcse","newcse","movable"];
 var time_ref=["08:30","09:00","09:50","11:00","11:50","13:30","14:20","15:10","16:00"];
 var day_ref=["monday","tuesday","wednesday","thursday","friday","saturday"];
+var per=["test","I","II","III","IV","V","VI","VII","spcl"];
+
 function basi(ar,halln,name1){
   if(ar=="-1"){
     for(var i=0;i<9;i++){
@@ -36,8 +38,8 @@ function basi(ar,halln,name1){
 
   for(var i=0;i<9;i++){
     var butname=halln.concat(i);
-    var periodid="period".concat(i);
-    if(ar[i+2]=='0'){
+   var periodid=per[i];
+    if(ar[i]=='0'){
       document.getElementById(butname).className="box";
       document.getElementById(butname).innerHTML="Free";
       document.getElementById(butname).setAttribute("perform", "book_period.php");
@@ -46,7 +48,7 @@ function basi(ar,halln,name1){
       document.getElementById(butname).setAttribute("periodid",periodid);
 
     }
-    else if(ar[i+2]=='1'){
+    else if(ar[i]=='2'){
       document.getElementById(butname).className="blue";
       document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
       document.getElementById(butname).disabled = true;
@@ -54,7 +56,7 @@ function basi(ar,halln,name1){
       document.getElementById(butname).setAttribute("periodid",periodid);
 
     }
-    else if(ar[i+2]==name1){
+    else if(ar[i]==name1){
       document.getElementById(butname).className="green";
       document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>";
       document.getElementById(butname).setAttribute("perform", "cancel_period.php");
@@ -91,7 +93,7 @@ function bas(name1){
       if (xmlhttp.readyState==4 && xmlhttp.status == 200)
         {
           var myArr = JSON.parse(xmlhttp.responseText);
-          basi(myArr,hall_ref[k],name1);
+        basi(myArr,hall_ref[k],name1);
         }
   }
 
@@ -99,6 +101,8 @@ function bas(name1){
   xmlhttp.open("GET",url,false);
   xmlhttp.send(null);
   }
+
+
 }
 function basi1(arr,dayn){
 
@@ -254,6 +258,72 @@ function perop(y){
   xmlhttp.setRequestHeader("Content-length", parameters .length);
   xmlhttp.setRequestHeader("Connection", "close");
   xmlhttp.send(parameters);
+
+
+}
+
+var code,subname,mov_pro,year,section;
+
+function home_form()
+{
+
+  code=document.getElementById("code").value;
+   subname=document.getElementById("subname").value;
+mov_pro=document.getElementById("movable").value;
+var type_sel = document.getElementsByName("year");
+for(var i = 0; i < type_sel.length; i++) {
+		   if(type_sel[i].checked == true) {
+		     	year = type_sel[i].value;
+		   }
+		 }
+var type_sel = document.getElementsByName("section");
+
+     		for(var i = 0; i < type_sel.length; i++) {
+     		   if(type_sel[i].checked == true) {
+     		      section = type_sel[i].value;
+     		   }
+     		 }
+if(code){
+  alert("Enter all details");
+
+  if(subname){
+    alert("Enter all details");
+
+    if(year){
+      alert("Enter all details");
+
+      if(section){
+        alert("Enter all details");
+
+if(mov_pro){
+        if (xmlhttp==null)
+        {
+              alert ("Your browser does not support AJAX!");
+              return;
+        }
+        var url="set.php";
+        url=url+"?code="+code+"&subname="+subname+"&movable="+mov_pro+"&year="+year+"&section="+section;
+        url=url+"&sid="+Math.random();
+        xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status == 200)
+        {
+        }
+        }
+        xmlhttp.open("GET",url,true);
+        xmlhttp.send(null);
+
+
+        window.location="table1.php";
+
+        }
+      }
+      }
+    }
+  }
+  else{
+      alert("Enter all details");
+  }
+
 
 
 }

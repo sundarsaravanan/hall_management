@@ -45,10 +45,10 @@ else{
         <table class="logtab">
           <thead>
             <tr>
-              <th width="5%">SNo.</th>
+              <th width="3%">SNo.</th>
               <th width="10%">Date</th>
-              <th width="20%">Name</th>
-              <th width="5%">Period</th>
+              <th width="17%">Name</th>
+              <th width="10%">Period</th>
               <th width="8%">Subject Code</th>
               <th width="35%">Subject Name</th>
               <th width="13%">Venue</th>
@@ -66,7 +66,15 @@ while($row = mysqli_fetch_array($query)){
 	echo "<td>$k. </td>";
 	echo "<td> $row[1] </td>";
 	echo "<td> $row[5] </td>";
-	echo "<td> $row[3] </td>";
+	if($row[3]=="test"){
+		echo "<td> 8.30 - 9.00 </td>";
+	}
+	else if($row[3]=="spcl"){
+		echo "<td> 4.00 - 6.00 </td>";
+	}
+	else{
+		echo "<td> $row[3] </td>";
+	}
 	echo "<td> $row[6] </td>";
 	echo "<td> $row[7] </td>";
 	echo "<td> $row[4] </td>";

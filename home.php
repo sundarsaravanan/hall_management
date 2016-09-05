@@ -14,9 +14,6 @@ else{
 	<link rel="stylesheet" type="text/css" href="css/for_index.css">
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<script type="text/javascript" src="js/custom.js"></script>
-
-
-
 </head>
 <body style="background-color:#ffffff">
 	<div class="container-fluid">
@@ -26,7 +23,6 @@ else{
       <button type="button" class="btn btn-info " style="float:left;font-size:18px;" onclick="window.location='logout.php'">Logout
       </button>
     </div>
-
 		<div class="col-lg-8" style="height:180px;padding-top:30px;"><center><img src="logo.png" height="140px"width="800px"/></center></div>
     <div class="col-lg-2" style="margin-top:70px;">
       <button type="button" class="btn btn-info " style="float:right;" onclick="window.location='settings.php'">  <span class="glyphicon glyphicon-cog" aria-hidden="true"
@@ -37,27 +33,21 @@ else{
         echo '<button type="button" class="btn btn-info " style="float:right;margin-top:0px;margin-right:40px;font-size:18px;" onclick="call_home();"> Edit
         </button>';
       }
-
        ?>
     </div>
   </div>
 		<div class="row" >
-
 			<div class="col-lg-12" style="margin-top:0px;"><center><h2 style="letter-spacing:8px;font-family:serif;font-size:30px;">LCD Portal</h2></center></div>
-
 		</div>
-
 		<div class="row">
 			<div class="col-lg-6" style="padding-right: 80px;padding-left: 80px;margin-top:20px;">
         <div class="row">
-        				<div class="col-lg-8 col-lg-offset-4" style="padding-top:10px;padding-left:30px;padding-right:30px;border: 1px solid black;border-radius: 20px;		box-shadow: 5px 5px 25px 4px #9C9C9C;background-color:#f5cc85;"
-    >
-
+        				<div class="col-lg-8 col-lg-offset-4" style="padding-top:10px;padding-left:30px;padding-right:30px;border: 1px solid black;border-radius: 20px;		box-shadow: 5px 5px 25px 4px #9C9C9C;background-color:#f5cc85;">
         	                        <div class="form-horizontal">
                                     <div class="form-group">
                                      <div class="col-lg-12">
-                                       <h3 style="letter-spacing:5px;font-family:serif;font-size:30px;">Details</h3>                                       </div>
-
+                                       <h3 style="letter-spacing:5px;font-family:serif;font-size:30px;">Details</h3>
+																	  </div>
                                     </div>
                                     <hr>
         								<div class="form-group">

@@ -266,6 +266,15 @@ function perop(y){
   xmlhttp.onreadystatechange=function(){
   if (xmlhttp.readyState==4 && xmlhttp.status == 200)
   {
+    var re=xmlhttp.responseText;
+    if(re=="same"){
+      e.className="red";
+      e.innerHTML="<span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span>";
+      e.disabled = true;
+      alert("It was booked by another staff at same time.");
+
+
+    }
   }
 
   }
@@ -276,7 +285,6 @@ function perop(y){
   xmlhttp.setRequestHeader("Content-length", parameters .length);
   xmlhttp.setRequestHeader("Connection", "close");
   xmlhttp.send(parameters);
-
 
 }
 
@@ -359,9 +367,6 @@ if(pass){
   if(conf){
 
     if(pass==conf ){
-
-      var xmlhttp=GetXmlHttpObject();
-
       if (xmlhttp==null)
        {
              alert ("Your browser does not support AJAX!");
@@ -382,7 +387,8 @@ if(pass){
       xmlhttp.setRequestHeader("Content-length", parameters .length);
       xmlhttp.setRequestHeader("Connection", "close");
       xmlhttp.send(parameters);
-
+      alert("Updated Successfully");
+      window.location="home.php";
       }
       else{
         alert("Passwords do not match");

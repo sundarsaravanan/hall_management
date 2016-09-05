@@ -11,14 +11,28 @@
         $year=$_SESSION['year'];
         $movable=$_SESSION['movable'];
         $section=$_SESSION['section'];
-        if($hall=="movable"){
-          $sql = "update booking set staffid='$usname', code='$code',subname='$subname',year='$year',section='$section',venue='$movable' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
-        	$query = mysqli_query($dbCon, $sql);
-        }
-        else{
-        $sql = "update booking set staffid='$usname', code='$code',subname='$subname',year='$year',section='$section' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
-      	$query = mysqli_query($dbCon, $sql);
-      }
+
+        $sql="select staffid from booking where date='$date' and lcd_type='$hall' and periodid='$periodid'";
+        $query = mysqli_query($dbCon, $sql);
+$row=mysqli_fetch_row($query);
+$present=$row[0];
+
+if($present=="0"){
+  if($hall=="movable"){
+    $sql = "update booking set staffid='$usname', code='$code',subname='$subname',year='$year',section='$section',venue='$movable' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
+    $query = mysqli_query($dbCon, $sql);
+  }
+  else{
+  $sql = "update booking set staffid='$usname', code='$code',subname='$subname',year='$year',section='$section' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
+  $query = mysqli_query($dbCon, $sql);
+}
+
+
+
+}
+else{
+  echo "same";
+}
 
   }
   else {

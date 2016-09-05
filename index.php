@@ -71,7 +71,7 @@ elseif (isset($_POST['username'])) {
 							<hr>
 							<div class="form-group">
 								<div class="col-lg-12">
-									<center><input id="textbox1" type="text"  class="form-control" placeholder="Name"name="username" onblur="user1(document.getElementById('textbox1').value)"></center>
+									<center><input id="textbox1"  autocomplete="off" type="text"  class="form-control" placeholder="Staff id"name="username" onblur="user1(document.getElementById('textbox1').value)"></center>
 								</div>
 							</div>
 							<div class="form-group">

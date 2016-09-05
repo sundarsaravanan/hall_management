@@ -15,6 +15,8 @@ else{
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<script type="text/javascript" src="js/custom.js"></script>
 
+
+
 </head>
 <body style="background-color:#ffffff">
 	<div class="container-fluid">

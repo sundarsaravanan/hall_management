@@ -21,11 +21,14 @@ function GetXmlHttpObject(){
     return null;
 }
 var hall_ref=["d1hall","oldcse","newcse","movable"];
-var time_ref=["08:30","09:00","09:50","11:00","11:50","13:30","14:20","15:10","16:00"];
+var time_ref=["08:30:00","09:00:00","09:50:00","11:00:00","11:50:00","13:30:00","14:20:00","15:10:00","16:00:00"];
 var day_ref=["monday","tuesday","wednesday","thursday","friday","saturday"];
 var per=["test","I","II","III","IV","V","VI","VII","spcl"];
 
 function basi(ar,halln,name1){
+  var b=new Date();
+ b=b.getTime();
+ console.log(b);
   if(ar=="-1"){
     for(var i=0;i<9;i++){
       var butname=halln.concat(i);
@@ -38,7 +41,21 @@ function basi(ar,halln,name1){
 
   for(var i=0;i<9;i++){
     var butname=halln.concat(i);
-   var periodid=per[i];
+    var periodid=per[i];
+var a=localStorage.getItem('dateval');
+ a=a.concat(" ");
+ a=a.concat(time_ref[i]);
+ a=new Date(a);
+ a=a.getTime();
+
+
+if(a<b | b+7200000>a){
+//if(a<b){
+  document.getElementById(butname).disabled = true;
+  document.getElementById(butname).style = "opacity:0.7;";
+
+}
+
     if(ar[i]=='0'){
       document.getElementById(butname).className="box";
       document.getElementById(butname).innerHTML="Free";
@@ -76,7 +93,8 @@ function basi(ar,halln,name1){
     }
 
 
-  }
+
+}
   }
 }
 function bas(name1){
@@ -326,4 +344,10 @@ if(mov_pro){
 
 
 
+}
+
+function datestore1(){
+  var de=document.getElementById("datepicker").value;
+  var dt_to = $.datepicker.formatDate('dd/mm/yy', new Date(de));
+  localStorage.setItem('dateval',dt_to);
 }

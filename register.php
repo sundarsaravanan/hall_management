@@ -64,13 +64,13 @@ if ($pass2==$pass3) {
 <hr>
                                 <div class="form-group">
 		                         	 	<div class="col-lg-12">
-											                    <center>   <input id="textbox5" type="text" placeholder="Full Name" class="form-control" name="name1" onblur="user1(document.getElementById('textbox1').value)"></center>
+											                    <center>   <input id="textbox5" type="text" placeholder="Name" class="form-control" name="name1" onblur="user1(document.getElementById('textbox1').value)"></center>
 		                          		</div>
 		                         	 </div>
 
                                <div class="form-group">
 		                         	 	<div class="col-lg-12">
-											                      <center>  <input id="textbox2" type="text" placeholder="Username" class="form-control" name="username2" onBlur="check(document.getElementById('textbox2').value)"></center>
+											                      <center>  <input id="textbox2" type="text" placeholder="Staff id" class="form-control" name="username2" onBlur="check(document.getElementById('textbox2').value)"></center>
 		                          		</div>
 		                         	 </div>
 

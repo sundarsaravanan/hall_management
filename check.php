@@ -27,7 +27,7 @@ if (isset($_SESSION['id'])) {
     $day_ref=array("sunday","monday","tuesday","wednesday","thursday","friday","saturday");
 $day = date('w', $timestamp);
  if($flag==0){
-  	    	header("Location: table1.php");
+  	    	header("Location: table.php");
   	}
   	else{
       $hall=array("d1hall","oldcse","newcse","movable");
@@ -45,7 +45,7 @@ $day = date('w', $timestamp);
         }
 
         }
-  	header("Location: table1.php");
+  	header("Location: table.php");
   }
 	}
 	else {

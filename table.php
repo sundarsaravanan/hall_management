@@ -1,12 +1,12 @@
 <?php
 session_start();
-if (isset($_SESSION['id'])) {
-  $usname = $_SESSION['username'];
+if (isset($_SESSION['id']) && isset($_SESSION['code'])&& isset($_SESSION['subname'])&& isset($_SESSION['year'])&& isset($_SESSION['section'])&& isset($_SESSION['movable'])) {
+  $usname = $_SESSION['usname'];
   $date=$_SESSION['date'];
   include_once("dbconnect.php");
 }
 else {
-  header("Location: index.php");
+  header("Location: home.php");
 }
 if (!empty($_POST['date'])) {
  $date = strip_tags($_POST['date']);
@@ -15,6 +15,7 @@ if (!empty($_POST['date'])) {
 }
 date_default_timezone_set('Asia/Calcutta');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,138 +23,132 @@ date_default_timezone_set('Asia/Calcutta');
   <link rel="stylesheet" type="text/css" href="css/custom.css">
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <script type="text/javascript" src="js/custom.js"></script>
-</head>
-<body>
-  <button id="log_out"  class="btn btn-primary" onclick="window.location='logout.php'">
-    <i class="fa fa-btn fa-sign-in"></i> Logout
-  </button>
-  <?php
-  if($_SESSION['role']=="admin"){
-    echo "<button id='log_out'  class='btn btn-primary' onclick='edit();'>
-      <i class='fa fa-btn fa-sign-in'></i> Edit
-    </button>";
-  }
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
-   ?>
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker({ minDate: 0 ,
+        beforeShowDay: noSunday ,maxDate: 3,
+       dateFormat: 'dd-mm-yy'
+
+});
+  });
+
+  function noSunday(date){
+            var day = date.getDay();
+                        return [(day > 0), ''];
+        };
+  </script>
+
+</head>
+<body onload="bas('<?php echo $usname;?>');" style="background-color:#ffffff;">
+
+
   <div class="container-fluid">
-    <div class="row" style="height:30px;"></div>
-    <div class="row"><div class="col-md-4 col-md-offset-4"><center><h3>CSE DEPARTMENT - LCD PORTAL</h3></center></div></div>
-    <hr>
+    <div class="row" style="border-bottom:1px solid black;padding-bottom:20px;margin-bottom:30px;background-color:#ffffff;">
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-primary " style="float:left;margin-top:30px;font-size:18px;" onclick="window.location='logout.php'"> Logout
+        </button>
+      </div>
+      <div class="col-lg-8"style="margin-top:20px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#000000;">BOOKING</h2></center></div>
+      <div class="col-lg-2">
+
+        <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
+            style="font-size: 20px;"></span>
+        </button>
+
+      </div>
+    </div>
+
+
     <div class="row">
-      <div class="col-md-5 col-md-offset-7">
-        <form action="table.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
-          <div class="form-group">
-            <label for="username" class="col-md-4 control-label">Choose date</label>
-            <div class="col-md-5">
-             <input type="date" class="form-control" name="date" placeholder="Choose Date" value="<?php echo $_SESSION['date']?>">
-           </div>
-         </div>
-         <div class="form-group">
-          <div class="col-md-6 col-md-offset-4">
-            <button type="submit" class="btn btn-primary">
+      <div class="col-lg-5 col-lg-offset-7">
+        <form  action="table.php"  method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
+            <div class="col-lg-5 col-lg-offset-2">
+             <input  autocomplete="off" id="datepicker" class="form-control" name="date" placeholder="Choose Date" value="<?php echo $_SESSION['date']?>">
+</div>
+<div class="col-lg-3 col-lg-offset-1">
+            <button type="submit" class="btn btn-primary" style="font-size:20px;" onclick="datestore1();">
               <i class="fa fa-btn fa-sign-in"></i> Check
             </button>
           </div>
-        </div>
       </form>
     </div>
   </div>
   <br>
   <div class="row"  >
-    <div class="col-md-12" >
-
-          <div class="row" >
-            <div class="col-md-10 col-md-offset-1" style="padding-left:10px;">
-              <div class="panel panel-default">
-                <div class="panel-body">
-              <table>
+    <div class="col-lg-12" >
+      <br>
+            <center>  <table class="timetab">
                 <tr>
-                  <td><h4><center>VENUE</center></h4></td>
-                  <td><h4><center>0</center></h4></td>
-                  <td><h4><center>I</center></h4></td>
-                  <td><h4><center>II</center></h4></td>
-                  <td><h4><center>III</center></h4></td>
-                  <td><h4><center>IV</center></h4></td>
-                  <td><h4><center>V</center></h4></td>
-                  <td><h4><center>VI</center></h4></td>
-                  <td><h4><center>VII</center></h4></td>
-                  <td><h4><center>EVENING</center></h4></td>
+                  <td class="tab_col tab_row"><h3><center>Venue</center></h3></td>
+                  <td class="tab_col"><h3><center>0</center></h3></td>
+                  <td class="tab_col"><h3><center>I</center></h3></td>
+                  <td class="tab_col"><h3><center>II</center></h3></td>
+                  <td class="tab_col"><h3><center>III</center></h3></td>
+                  <td class="tab_col"><h3><center>IV</center></h3></td>
+                  <td class="tab_col"><h3><center>V</center></h3></td>
+                  <td class="tab_col"><h3><center>VI</center></h3></td>
+                  <td class="tab_col"><h3><center>VII</center></h3></td>
+                  <td class="tab_col"><h3><center>4-6 pm</center></h3></td>
+                </tr>
+
+                <tr>
+                  <td class="tab_row"><h3><center>D1 Hall</center></h3></td>
+                  <td><button class="box" id="d1hall0" onclick="checkperiod1(this);">-</button></td>
+                  <td><button class="box" id="d1hall1" onclick="checkperiod1(this);">-</button></td>
+                    <td><button class="box" id="d1hall2" onclick="checkperiod1(this);">-</button></td>
+                      <td><button class="box" id="d1hall3" onclick="checkperiod1(this);">-</button></td>
+                        <td><button class="box" id="d1hall4" onclick="checkperiod1(this);">-</button></td>
+                          <td><button class="box" id="d1hall5" onclick="checkperiod1(this);">-</button></td>
+                            <td><button class="box" id="d1hall6" onclick="checkperiod1(this);">-</button></td>
+                              <td><button  class="box" id="d1hall7" onclick="checkperiod1(this);">-</button></td>
+                                <td><button class="box" id="d1hall8" onclick="checkperiod1(this);">-</button></td>
                 </tr>
                 <tr>
-                  <td><h5><center></center></h5></td>
-                  <td><h5><center>8.30  - 9.00 am</center></h5></td>
-                  <td><h5><center>9.00  - 9.50 am</center></h5></td>
-                  <td><h5><center>9.50  - 10.40 am</center></h5></td>
-                  <td><h5><center>11.00  - 11.50 am</center></h5></td>
-                  <td><h5><center>11.50  - 12.40 pm</center></h5></td>
-                  <td><h5><center>1.30  - 2.20 pm</center></h5></td>
-                  <td><h5><center>2.20  - 3.10 pm</center></h5></td>
-                  <td><h5><center>3.10  - 4.00 pm</center></h5></td>
-                  <td><h5><center>4.00  - 6.00 pm</center></h5></td>
+                  <td class="tab_row"><h3><center>Old Cse Lab</center></h3></td>
+                  <td><button class="box" id="oldcse0" onclick="checkperiod1(this);">-</button></td>
+                  <td><button class="box" id="oldcse1" onclick="checkperiod1(this);">-</button></td>
+                    <td><button class="box" id="oldcse2" onclick="checkperiod1(this);">-</button></td>
+                      <td><button class="box" id="oldcse3" onclick="checkperiod1(this);">-</button></td>
+                        <td><button class="box" id="oldcse4" onclick="checkperiod1(this);">-</button></td>
+                          <td><button class="box" id="oldcse5" onclick="checkperiod1(this);">-</button></td>
+                            <td><button class="box" id="oldcse6" onclick="checkperiod1(this);">-</button></td>
+                              <td><button  class="box" id="oldcse7" onclick="checkperiod1(this);">-</button></td>
+                                <td><button class="box" id="oldcse8" onclick="checkperiod1(this);">-</button></td>
                 </tr>
-                <?php
-                $halls=array("D1 HALL","OLD CSE LAB","NEW CSE LAB","MOVABLE");
-                $hall_ref=array("d1hall","oldcse","newcse","movable");
-                $time_ref=array("","","08:30","09:00","09:50","11:00","11:50","13:30","14:20","15:10","16:00");
-                for($k=0;$k<4;$k++){
-                    echo "<tr><td><h4><center>$halls[$k]</center></h4></td>";
-                    $sql = "SELECT * FROM log WHERE date='$date' and hall='$hall_ref[$k]' ";
-                    $query = mysqli_query($dbCon, $sql);
-                    $row = mysqli_fetch_row($query);
-                    for($i=2;$i<=10;$i++){
-                      $action='cancel_period.php';
-                      $op=1;
-                      $type="";
-                        echo "<td>";
-                        if($row[$i]=='0'){
-                          $id='box';
-                          $button='Free';
-                          $action='book_period.php';
-                        }elseif($row[$i]==$usname){
-                          $id='green';
-                          $button='Allotted';
-
-                      }elseif($row[$i]=='1'){
-                        $id='blue';
-                        $button='Lab Hour';
-                        $type="disabled";
-                      }else{
-                          $id='red';
-                          $button='Booked by <BR>'.strtoupper($row[$i]);
-                          $type="disabled";
-
-                        }
-
-
-                        $ts=time();
-                        $date1=date_create("$date $time_ref[$i]");
-                        $date2=strtotime(date_format($date1,"Y/m/d H:i"));
-                        if($ts-$date2>7200){
-                          $type="disabled";
-                          $op=0.7;
-                      }
-                      if(empty($date)){
-                        $button="-";
-                        $id="box";
-                      }
-
-
-                        $j=$i-2;
-                        $periodid="period$j";
-                        echo '<button id="'.$id.'" type="button" time_ref="'.$time_ref[$i].'" hall="'.$hall_ref[$k].'" perform="'.$action.'" periodid="'.$periodid.'"  style="opacity:'.$op.'"onclick="checkperiod1(this);" '.$type.'><h6><i>'.$button.'</i></h6></button>';
-                        echo "</td>";
-                      }
-                    echo '</tr>';
-                }
-                ?>
-          </table>
-        </div>
-      </div></div>
-      </div>
+                <tr>
+                  <td class="tab_row"><h3><center>New Cse Lab</center></h3></td>
+                  <td><button class="box" id="newcse0" onclick="checkperiod1(this);">-</button></td>
+                  <td><button class="box" id="newcse1" onclick="checkperiod1(this);">-</button></td>
+                    <td><button class="box" id="newcse2" onclick="checkperiod1(this);">-</button></td>
+                      <td><button class="box" id="newcse3" onclick="checkperiod1(this);">-</button></td>
+                        <td><button class="box" id="newcse4" onclick="checkperiod1(this);">-</button></td>
+                          <td><button class="box" id="newcse5" onclick="checkperiod1(this);">-</button></td>
+                            <td><button class="box" id="newcse6" onclick="checkperiod1(this);">-</button></td>
+                              <td><button  class="box" id="newcse7" onclick="checkperiod1(this);">-</button></td>
+                                <td><button class="box" id="newcse8" onclick="checkperiod1(this);">-</button></td>
+                </tr>
+                <tr>
+                  <td  class="tab_row"><h3><center>Movable</center></h3></td>
+                  <td><button class="box" id="movable0" onclick="checkperiod1(this);">-</button></td>
+                  <td><button class="box" id="movable1" onclick="checkperiod1(this);">-</button></td>
+                    <td><button class="box" id="movable2" onclick="checkperiod1(this);">-</button></td>
+                      <td><button class="box" id="movable3" onclick="checkperiod1(this);">-</button></td>
+                        <td><button class="box" id="movable4" onclick="checkperiod1(this);">-</button></td>
+                          <td><button class="box" id="movable5" onclick="checkperiod1(this);">-</button></td>
+                            <td><button class="box" id="movable6" onclick="checkperiod1(this);">-</button></td>
+                              <td><button  class="box" id="movable7" onclick="checkperiod1(this);">-</button></td>
+                                <td><button class="box" id="movable8" onclick="checkperiod1(this);">-</button></td>
+                </tr>
+              </table></center>
 </div>
 </div>
 </div>
+
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/in_body.js"></script>
+
 </body>
 </html>

@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-	<script type="text/javascript" src="in_head.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -27,11 +27,7 @@
           <center><h3 style="letter-spacing:5px;font-family:serif;font-size:25px;">Settings</h3><hr></center>
                         </div>
                      </div>
-								<div class="form-group">
-	                         	 	<div class="col-lg-12">
-									<center>	<br><input type="password" class="form-control" placeholder="Old Password" name="pass" id="old_t"></center>
-	                          		</div>
-	                         	 </div>
+							
 
 
 	                         	 <div class="form-group">

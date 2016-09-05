@@ -302,16 +302,12 @@ var type_sel = document.getElementsByName("section");
      		   }
      		 }
 if(code){
-  alert("Enter all details");
 
   if(subname){
-    alert("Enter all details");
 
     if(year){
-      alert("Enter all details");
 
       if(section){
-        alert("Enter all details");
 
 if(mov_pro){
         if (xmlhttp==null)
@@ -331,7 +327,7 @@ if(mov_pro){
         xmlhttp.send(null);
 
 
-        window.location="table1.php";
+        window.location="table.php";
 
         }
       }
@@ -350,4 +346,47 @@ function datestore1(){
   var de=document.getElementById("datepicker").value;
   var dt_to = $.datepicker.formatDate('dd/mm/yy', new Date(de));
   localStorage.setItem('dateval',dt_to);
+}
+
+
+function update(){
+  var pass=document.getElementById("pass_t").value;
+
+  var conf=document.getElementById("conpass_t").value;
+
+if(pass){
+
+  if(conf){
+
+    if(pass==conf ){
+
+      var xmlhttp=GetXmlHttpObject();
+
+      if (xmlhttp==null)
+       {
+             alert ("Your browser does not support AJAX!");
+             return;
+       }
+      var url="update.php";
+      var parameters="pass="+pass+"&conf="+conf;
+      xmlhttp.onreadystatechange=function(){
+      if (xmlhttp.readyState==4 && xmlhttp.status == 200)
+      {
+      }
+
+      }
+
+
+      xmlhttp.open("POST",url,true);
+      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xmlhttp.setRequestHeader("Content-length", parameters .length);
+      xmlhttp.setRequestHeader("Connection", "close");
+      xmlhttp.send(parameters);
+
+      }
+      else{
+        alert("Passwords do not match");
+      }
+    }
+  }
 }

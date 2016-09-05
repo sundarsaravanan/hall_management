@@ -66,7 +66,16 @@ while($row = mysqli_fetch_array($query)){
 	echo '<tr>';
 	echo "<td>$k. </td>";
 	echo "<td> $row[1] </td>";
-	echo "<td> $row[3] </td>";
+	if($row[3]=="test"){
+		echo "<td> 8.30 - 9.00 </td>";
+	}
+	else if($row[3]=="spcl"){
+		echo "<td> 4.00 - 6.00 </td>";
+	}
+	else{
+		echo "<td> $row[3] </td>";
+	}
+
 	echo "<td> $row[6] </td>";
 	echo "<td> $row[7] </td>";
 	echo "<td> $row[4] </td>";

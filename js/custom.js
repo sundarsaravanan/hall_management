@@ -28,7 +28,6 @@ var per=["test","I","II","III","IV","V","VI","VII","spcl"];
 function basi(ar,halln,name1){
   var b=new Date();
  b=b.getTime();
- console.log(b);
   if(ar=="-1"){
     for(var i=0;i<9;i++){
       var butname=halln.concat(i);
@@ -50,7 +49,6 @@ var a=localStorage.getItem('dateval');
 
 
 if(a<b | b+7200000>a){
-//if(a<b){
   document.getElementById(butname).disabled = true;
   document.getElementById(butname).style = "opacity:0.7;";
 
@@ -272,11 +270,8 @@ function perop(y){
       e.innerHTML="<span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span>";
       e.disabled = true;
       alert("It was booked by another staff at same time.");
-
-
+      }
     }
-  }
-
   }
 
 
@@ -285,7 +280,7 @@ function perop(y){
   xmlhttp.setRequestHeader("Content-length", parameters .length);
   xmlhttp.setRequestHeader("Connection", "close");
   xmlhttp.send(parameters);
-
+alert("hello");
 }
 
 var code,subname,mov_pro,year,section;

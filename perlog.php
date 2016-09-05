@@ -78,7 +78,22 @@ while($row = mysqli_fetch_array($query)){
 
 	echo "<td> $row[6] </td>";
 	echo "<td> $row[7] </td>";
-	echo "<td> $row[4] </td>";
+	if($row[4]=="newcse"){
+		echo "<td> New Cse Lab </td>";
+
+	}
+	else if ($row[4]=="oldcse") {
+		echo "<td> Old Cse Lab </td>";
+
+	}
+	else if ($row[4]=="d1hall") {
+		echo "<td> D1 Hall </td>";
+
+	}
+	else{
+		echo "<td> $row[4] </td>";
+
+	}
 	echo "<td> $row[8] </td>";
 	echo "<td> $row[9] </td>";
 	echo '</tr>';

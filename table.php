@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['id']) && isset($_SESSION['code'])&& isset($_SESSION['subname'])&& isset($_SESSION['year'])&& isset($_SESSION['section'])&& isset($_SESSION['movable'])) {
+if (isset($_SESSION['id'])) {
   $usname = $_SESSION['usname'];
   $date=$_SESSION['date'];
   include_once("dbconnect.php");

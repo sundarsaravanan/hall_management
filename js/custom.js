@@ -50,7 +50,7 @@ var a=localStorage.getItem('dateval');
 
 if(a<b | b+7200000>a){
   document.getElementById(butname).disabled = true;
-  document.getElementById(butname).style = "opacity:0.7;";
+  document.getElementById(butname).style = "opacity:0.5;";
 
 }
 
@@ -231,12 +231,25 @@ function checkperiod1(e){
   var action=e.getAttribute("perform");
   var hall=e.getAttribute("hall");
   var id=e.getAttribute("id");
+
   if(action=="book_period.php")
   {
-    perop(id);
+
+    if(hall=="movable"){
+    var room=prompt("Enter Hall Number");
+  }
+  else{
+    perop(id,"0");
     e.className="green";
     e.innerHTML="<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>";
     e.setAttribute("perform", "cancel_period.php");
+  }
+  if(room){
+    perop(id,room);
+    e.className="green";
+    e.innerHTML="<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>";
+    e.setAttribute("perform", "cancel_period.php");
+  }
 
   }
   else{
@@ -247,7 +260,7 @@ function checkperiod1(e){
 
   }
 }
-function perop(y){
+function perop(y,roo){
   var e=document.getElementById(y);
   var x=e.getAttribute("periodid");
   var action=e.getAttribute("perform");
@@ -260,7 +273,7 @@ function perop(y){
          return;
    }
   var url=action;
-  var parameters="period="+x+"&hall="+hall;
+  var parameters="period="+x+"&hall="+hall+"&room="+roo;
   xmlhttp.onreadystatechange=function(){
   if (xmlhttp.readyState==4 && xmlhttp.status == 200)
   {
@@ -283,14 +296,13 @@ function perop(y){
 
 }
 
-var code,subname,mov_pro,year,section;
+var code,subname,year,section;
 
 function home_form()
 {
 
   code=document.getElementById("code").value;
    subname=document.getElementById("subname").value;
-mov_pro=document.getElementById("movable").value;
 var type_sel = document.getElementsByName("year");
 for(var i = 0; i < type_sel.length; i++) {
 		   if(type_sel[i].checked == true) {
@@ -312,14 +324,14 @@ if(code){
 
       if(section){
 
-if(mov_pro){
+
         if (xmlhttp==null)
         {
               alert ("Your browser does not support AJAX!");
               return;
         }
         var url="set.php";
-        url=url+"?code="+code+"&subname="+subname+"&movable="+mov_pro+"&year="+year+"&section="+section;
+        url=url+"?code="+code+"&subname="+subname+"&year="+year+"&section="+section;
         url=url+"&sid="+Math.random();
         xmlhttp.onreadystatechange=function(){
         if (xmlhttp.readyState==4 && xmlhttp.status == 200)
@@ -332,7 +344,7 @@ if(mov_pro){
 
         window.location="table.php";
 
-        }
+
       }
       }
     }

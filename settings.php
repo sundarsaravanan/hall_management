@@ -27,7 +27,7 @@
           <center><h3 style="letter-spacing:5px;font-family:serif;font-size:25px;">Settings</h3><hr></center>
                         </div>
                      </div>
-							
+
 
 
 	                         	 <div class="form-group">

@@ -6,7 +6,6 @@ $_SESSION['code']=$_GET['code'];
 $_SESSION['subname']=$_GET['subname'];
 $_SESSION['year']=$_GET['year'];
 $_SESSION['section']=$_GET['section'];
-$_SESSION['movable']=$_GET['movable'];
 
 }
 else {

@@ -19,13 +19,10 @@ else{
 	<div class="container-fluid">
     <div class="row" style="background-color:#433498;">
 
-    <div class="col-lg-2" style="margin-top:70px;">
-      <button type="button" class="btn btn-info " style="float:left;font-size:18px;" onclick="window.location='logout.php'">Logout
-      </button>
-    </div>
-		<div class="col-lg-8" style="height:180px;padding-top:30px;"><center><img src="logo.png" height="140px"width="800px"/></center></div>
-    <div class="col-lg-2" style="margin-top:70px;">
-      <button type="button" class="btn btn-info " style="float:right;" onclick="window.location='settings.php'">  <span class="glyphicon glyphicon-cog" aria-hidden="true"
+
+
+		<div class="col-lg-2" style="margin-top:70px;">
+      <button type="button" class="btn btn-info " style="float:left;" onclick="window.location='settings.php'">  <span class="glyphicon glyphicon-cog" aria-hidden="true"
           style="font-size: 20px;"></span>
       </button>
       <?php
@@ -34,6 +31,11 @@ else{
         </button>';
       }
        ?>
+    </div>
+		<div class="col-lg-8" style="height:180px;padding-top:30px;"><center><img src="logo.png" height="140px"width="800px"/></center></div>
+		<div class="col-lg-2" style="margin-top:70px;">
+      <button type="button" class="btn btn-info " style="float:right;font-size:18px;" onclick="window.location='logout.php'">Logout
+      </button>
     </div>
   </div>
 		<div class="row" >
@@ -64,11 +66,7 @@ else{
         	                          		</div>
         	                         	 </div>
 
-                                     <div class="form-group">
-        	                         	 	<div class="col-lg-12">
-        										<input type="text" class="form-control" id="movable" placeholder="Hall Number ">
-        	                          		</div>
-        	                         	 </div>
+
 
                                      <div class="form-group">
                                        <label for="type_m" class="col-lg-4 control-label"><h4>Year</h4></label>

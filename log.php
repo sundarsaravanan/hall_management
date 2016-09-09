@@ -26,14 +26,15 @@ else{
 	<div class="container-fluid">
 		<div class="row" style="border-bottom:1px solid black;padding-bottom:20px;margin-bottom:30px;background-color:#433498;">
 			<div class="col-lg-2">
-				<button type="button" class="btn btn-danger " style="float:left;margin-top:40px;" onclick="window.location='logout.php'">  <span class="glyphicon glyphicon-log-out" aria-hidden="true"
-			  		style="font-size: 20px;"></span>Logout
+				<button type="button" class="btn btn-info " style="float:left;margin-top:40px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
+						style="font-size: 20px;"></span>
 				</button>
 			</div>
-			<div class="col-lg-8"style="margin-top:30px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#ffffff;">USAGE      LOG</h2></center></div>
+			<div class="col-lg-8"style="margin-top:30px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#ffffff;">USAGE LOG</h2></center></div>
+
+
 			<div class="col-lg-2">
-				<button type="button" class="btn btn-info " style="float:right;margin-top:40px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
-			  		style="font-size: 20px;"></span>
+				<button type="button" class="btn btn-info " style="float:right;margin-top:40px;font-size:18px;" onclick="window.location='logout.php'">Logout
 				</button>
 			</div>
 		</div>

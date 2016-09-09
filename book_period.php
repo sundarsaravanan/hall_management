@@ -6,10 +6,10 @@
       	include_once("dbconnect.php");
         $periodid=$_POST["period"];
         $hall=$_POST["hall"];
+        $room=$_POST["room"];
         $code=$_SESSION['code'];
         $subname=$_SESSION['subname'];
         $year=$_SESSION['year'];
-        $movable=$_SESSION['movable'];
         $section=$_SESSION['section'];
 
         $sql="select staffid from booking where date='$date' and lcd_type='$hall' and periodid='$periodid'";
@@ -19,7 +19,7 @@ $present=$row[0];
 
 if($present=="0"){
   if($hall=="movable"){
-    $sql = "update booking set staffid='$usname', code='$code',subname='$subname',year='$year',section='$section',venue='$movable' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
+    $sql = "update booking set staffid='$usname', code='$code',subname='$subname',year='$year',section='$section',venue='$room' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
     $query = mysqli_query($dbCon, $sql);
   }
   else{

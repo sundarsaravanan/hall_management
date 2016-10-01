@@ -120,11 +120,41 @@ else{
 			</div>
 
 			<div class="col-lg-6">
-				<div class="row" style="margin-bottom: 50px;margin-top:100px;">
+				<div class="row" style="margin-bottom: 50px;margin-top:50px;">
+					<a href="availability.php" style="text-decoration: none;">
+						<div class="col-lg-5 col-lg-offset-1" style="border: 1px solid black;border-radius: 20px;		box-shadow: 4px 4px 20px 0px #9C9C9C;background-color:#ffffff;
+">
+							<div class="row" style="padding-top: 5px;padding-bottom: 5px;background-color: #433498;border-top-left-radius: 20px;border-top-right-radius: 20px;">
+								<div class="col-lg-4">
+		       						<span class="glyphicon glyphicon-list-alt" style="color:#000000; float:right; font-size:25px; vertical-align: middle;" aria-hidden="true">
+		       						</span>
+		       						<br>
+								</div>
+								<div class="col-lg-8">
+									<a1 style="font-size: 22px;color:white;">Availability</a1>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
+
+									<h4 style="line-height: 20px;padding-top: 5px;padding-bottom:5px;color:black;">
+									<center>Check availbility of LCD</center>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</a>
+
+
+
+
+				</div>
+				<div class="row" style="margin-bottom: 50px;margin-top:50px;">
 					<a href="perlog.php" style="text-decoration: none;">
 						<div class="col-lg-5 col-lg-offset-1" style="border: 1px solid black;border-radius: 20px;		box-shadow: 4px 4px 20px 0px #9C9C9C;background-color:#ffffff;
 ">
-							<div class="row" style="padding-top: 10px;padding-bottom: 10px;background-color: #433498;border-top-left-radius: 20px;border-top-right-radius: 20px;">
+							<div class="row" style="padding-top: 5px;padding-bottom: 5px;background-color: #433498;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
 		       						<span class="glyphicon glyphicon-list-alt" style="color:#000000; float:right; font-size:25px; vertical-align: middle;" aria-hidden="true">
 		       						</span>
@@ -138,7 +168,7 @@ else{
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
 
-									<h4 style="line-height: 35px;padding-top: 10px;padding-bottom:10px;color:black;">
+									<h4 style="line-height: 20px;padding-top: 5px;padding-bottom:5px;color:black;">
 									<center>View your LCD usage</center>
 									</h4>
 								</div>
@@ -151,11 +181,11 @@ else{
 
 				</div>
 
-				<div class="row">
+				<div class="row" >
 					<a href="log.php" style="text-decoration: none;">
 						<div class="col-lg-5 col-lg-offset-1" style="border: 1px solid black;border-radius: 20px;		box-shadow: 4px 4px 20px 0px #9C9C9C;background-color:#ffffff;
 ">
-							<div class="row" style="padding-top: 10px;padding-bottom: 10px;background-color: #433498;border-top-left-radius: 20px;border-top-right-radius: 20px;">
+							<div class="row" style="padding-top: 5px;padding-bottom: 5px;background-color: #433498;border-top-left-radius: 20px;border-top-right-radius: 20px;">
 								<div class="col-lg-4">
 		       						<span class="glyphicon glyphicon-list-alt" style="color:#000000; float:right; font-size:25px; vertical-align: middle;" aria-hidden="true">
 		       						</span>
@@ -168,7 +198,7 @@ else{
 
 							<div class="row">
 								<div class="col-lg-12" style="padding-right: 15px;padding-left: 15px;">
-									<h4 style="line-height: 35px;padding-top: 10px;padding-bottom:10px;color:black;"><center>View the overall LCD usage </center></h4>
+									<h4 style="line-height: 20px;padding-top: 5px;padding-bottom:5px;color:black;"><center>View the overall LCD usage </center></h4>
 
 								</div>
 							</div>
@@ -176,6 +206,7 @@ else{
 					</a>
 
 				</div>
+
 
 			</div>
 		</div>

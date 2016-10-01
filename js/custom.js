@@ -120,6 +120,8 @@ function bas(name1){
 
 
 }
+
+
 function basi1(arr,dayn){
 
   if(arr=="-1"){
@@ -402,4 +404,94 @@ if(pass){
       }
     }
   }
+}
+
+
+
+
+
+function basi2(ar,halln,name1){
+  var b=new Date();
+ b=b.getTime();
+  if(ar=="-1"){
+    for(var i=0;i<9;i++){
+      var butname=halln.concat(i);
+
+        document.getElementById(butname).className="box";
+        document.getElementById(butname).disabled = true;
+
+    }
+  }else{
+
+  for(var i=0;i<9;i++){
+    var butname=halln.concat(i);
+    var periodid=per[i];
+var a=localStorage.getItem('dateval');
+ a=a.concat(" ");
+ a=a.concat(time_ref[i]);
+ a=new Date(a);
+ a=a.getTime();
+
+
+if(a<b | b+7200000>a){
+  document.getElementById(butname).disabled = true;
+  document.getElementById(butname).style = "opacity:0.5;";
+
+}
+
+    if(ar[i]=='0'){
+      document.getElementById(butname).className="box";
+      document.getElementById(butname).innerHTML="Free";
+      document.getElementById(butname).disabled = true;
+
+    }
+    else if(ar[i]=='2'){
+      document.getElementById(butname).className="blue";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
+      document.getElementById(butname).disabled = true;
+
+    }
+    else if(ar[i]==name1){
+      document.getElementById(butname).className="green";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>";
+      document.getElementById(butname).disabled = true;
+
+    }
+
+    else{
+      document.getElementById(butname).className="red";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span>";
+      document.getElementById(butname).disabled = true;
+
+    }
+
+
+
+}
+  }
+}
+function bas2(name1){
+  for(var k=0;k<4;k++){
+
+      if (xmlhttp==null)
+      {
+            alert ("Your browser does not support AJAX!");
+            return;
+      }
+  var url="sample.php";
+  url=url+"?q="+hall_ref[k];
+  xmlhttp.onreadystatechange=function(){
+      if (xmlhttp.readyState==4 && xmlhttp.status == 200)
+        {
+          var myArr = JSON.parse(xmlhttp.responseText);
+        basi2(myArr,hall_ref[k],name1);
+        }
+  }
+
+
+  xmlhttp.open("GET",url,false);
+  xmlhttp.send(null);
+  }
+
+
 }

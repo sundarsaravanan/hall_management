@@ -24,24 +24,29 @@ else{
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="row" style="border-bottom:1px solid black;padding-bottom:20px;margin-bottom:30px;background-color:#433498;">
-			<div class="col-lg-2">
-				<button type="button" class="btn btn-info " style="float:left;margin-top:40px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
-						style="font-size: 20px;"></span>
-				</button>
-			</div>
-			<div class="col-lg-8"style="margin-top:30px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#ffffff;">USAGE LOG</h2></center></div>
+		<div class="row" style="border-bottom:1px solid black;padding-bottom:20px;margin-bottom:30px;background-color:#ffffff;">
+	          <div class="col-sm-2">
+	            <button type="button" class="btn btn-primary " style="float:left;margin-top:30px;font-size:18px;margin-left:40px;" onclick="window.location='logout.php'"> Logout
+	            </button>
+	          </div>
+	          <div class="col-sm-8"style="margin-top:20px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#000000;">USAGE LOG</h2></center></div>
+	          <div class="col-sm-2">
+
+	            <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;margin-right:20px;" onclick="window.location='settings.php'">  <span class="glyphicon glyphicon-cog" aria-hidden="true"
+	                style="font-size: 20px;"></span>
+	            </button>
+
+		    <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;margin-right:20px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
+		       style="font-size: 20px;"></span>
+		   </button>
 
 
-			<div class="col-lg-2">
-				<button type="button" class="btn btn-info " style="float:right;margin-top:40px;font-size:18px;" onclick="window.location='logout.php'">Logout
-				</button>
-			</div>
-		</div>
+	          </div>
+	        </div>
 
 
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1" style="margin-top:10px;">
+			<div class="col-sm-10 col-sm-offset-1" style="margin-top:10px;">
 
         <table class="logtab">
           <thead>
@@ -49,12 +54,13 @@ else{
               <th width="3%">SNo.</th>
               <th width="10%">Date</th>
               <th width="17%">Name</th>
-              <th width="10%">Period</th>
-              <th width="8%">Subject Code</th>
-              <th width="35%">Subject Name</th>
+              <th width="5%">Period</th>
+              <th width="15%">Subject Code or Others</th>
               <th width="13%">Venue</th>
-              <th width="7%">Year</th>
-              <th width="7%">Section</th>
+              <th width="5%">Year</th>
+              <th width="5%">Section</th>
+	      <th width="37%">Remarks</th>
+
             <tr>
           </thead>
             <tbody>
@@ -76,24 +82,26 @@ while($row = mysqli_fetch_array($query)){
 	else{
 		echo "<td> $row[3] </td>";
 	}
+
+
 	echo "<td> $row[6] </td>";
-	echo "<td> $row[7] </td>";
 	if($row[4]=="newcse"){
 		echo "<td> New Cse Lab </td>";
 
 	}
-	else if ($row[4]=="oldcse") {
-		echo "<td> Old Cse Lab </td>";
+	else if ($row[4]=="oldcse1") {
+		echo "<td> Old Cse Lab 1&2</td>";
 
 	}
 	else if ($row[4]=="d1hall") {
 		echo "<td> D1 Hall </td>";
 
 	}
-	else{
-		echo "<td> $row[4] </td>";
+	else if ($row[4]=="oldcse2") {
+		echo "<td> Old Cse Lab 3&4</td>";
 
 	}
+	echo "<td> $row[7] </td>";
 	echo "<td> $row[8] </td>";
 	echo "<td> $row[9] </td>";
 	echo '</tr>';

@@ -27,10 +27,10 @@ if (isset($_SESSION['id'])) {
     $day_ref=array("sunday","monday","tuesday","wednesday","thursday","friday","saturday");
 $day = date('w', $timestamp);
  if($flag==0){
-  	    	header("Location: availability.php");
+  	    	header("Location: home.php");
   	}
   	else{
-      $hall=array("d1hall","oldcse","newcse","movable");
+      $hall=array("d1hall","newcse","oldcse1","oldcse2");
       $per=array("test","I","II","III","IV","V","VI","VII","spcl");
 
       for ($i=0;$i<4;$i++){
@@ -45,7 +45,7 @@ $day = date('w', $timestamp);
         }
 
         }
-  	header("Location: availability.php");
+  	header("Location: home.php");
   }
 	}
 	else {

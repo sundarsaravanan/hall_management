@@ -30,7 +30,7 @@ $day = date('w', $timestamp);
   	    	header("Location: table.php");
   	}
   	else{
-      $hall=array("d1hall","oldcse","newcse","movable");
+      $hall=array("d1hall","newcse","oldcse1","oldcse2");
       $per=array("test","I","II","III","IV","V","VI","VII","spcl");
 
       for ($i=0;$i<4;$i++){

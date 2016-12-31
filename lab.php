@@ -24,33 +24,35 @@ if (!empty($_POST['hall'])) {
 </head>
 <body onload="bas_lab();">
   <div class="row" style="border-bottom:1px solid black;padding-bottom:20px;margin-bottom:30px;background-color:#ffffff;">
-    <div class="col-lg-2">
+    <div class="col-sm-2">
       <button type="button" class="btn btn-primary " style="float:left;margin-top:30px;font-size:18px;margin-left:40px;" onclick="window.location='logout.php'"> Logout
       </button>
     </div>
-    <div class="col-lg-8"style="margin-top:20px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#000000;">ADMIN PORTAL</h2></center></div>
-    <div class="col-lg-2">
+    <div class="col-sm-8"style="margin-top:20px;"><center><h2 style="letter-spacing:5px;font-family:serif;font-size:25px;color:#000000;">ADMIN PORTAL</h2></center></div>
+    <div class="col-sm-2">
 
-      <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;margin-right:20px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
+      <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;margin-right:20px;" onclick="window.location='settings.php'">  <span class="glyphicon glyphicon-cog" aria-hidden="true"
           style="font-size: 20px;"></span>
+      </button>
+      <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;margin-right:20px;font-size:20px;" onclick="window.location='log.php'">  Log
       </button>
 
     </div>
   </div>
 
     <div class="row" style="margin-bottom:40px;">
-      <div class="col-md-4 col-md-offset-8">
+      <div class="col-sm-4 col-sm-offset-8">
         <form action="lab.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
-            <div class="col-md-6">
+            <div class="col-sm-6">
               <select class="form-control" name="hall" >
                   <option <?php if($_SESSION['hall']=="oldcse") echo 'selected="selected"'; ?>>Select Hall</option>
-					        <option value="oldcse" <?php if($_SESSION['hall']=="oldcse") echo 'selected="selected"'; ?>>Oldcse Lab</option>
                   <option value="newcse" <?php if($_SESSION['hall']=="newcse") echo 'selected="selected"'; ?>>Newcse Lab</option>
                   <option value="d1hall" <?php if($_SESSION['hall']=="d1hall") echo 'selected="selected"'; ?>>D1 Hall</option>
-                  <option value="movable"<?php if($_SESSION['hall']=="movable") echo 'selected="selected"'; ?>>Movable</option>
+                  <option value="oldcse1" <?php if($_SESSION['hall']=="oldcse1") echo 'selected="selected"'; ?>>Oldcse Lab 1&2</option>
+                  <option value="oldcse2" <?php if($_SESSION['hall']=="oldcse2") echo 'selected="selected"'; ?>>Oldcse Lab 3&4</option>
 					      </select>
                </div>
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <button type="submit" class="btn btn-primary">
               <i class="fa fa-btn fa-sign-in"></i> Check
             </button>
@@ -60,7 +62,7 @@ if (!empty($_POST['hall'])) {
   </div>
 
   <div class="row"  >
-    <div class="col-md-12 " >
+    <div class="col-sm-12 " >
 
 
                          <center><table class="timetab">

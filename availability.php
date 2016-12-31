@@ -30,7 +30,7 @@ date_default_timezone_set('Asia/Calcutta');
   <script>
   $(document).ready(function() {
     $("#datepicker").datepicker({ minDate: 0 ,
-        beforeShowDay: noSunday ,maxDate: 3,
+        beforeShowDay: noSunday ,maxDate: 7,
        dateFormat: 'dd-mm-yy'
 
 });

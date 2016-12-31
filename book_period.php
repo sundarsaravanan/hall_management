@@ -8,7 +8,6 @@
         $hall=$_POST["hall"];
         $room=$_POST["room"];
         $code=$_SESSION['code'];
-        $subname=$_SESSION['subname'];
         $year=$_SESSION['year'];
         $section=$_SESSION['section'];
 
@@ -19,11 +18,11 @@ $present=$row[0];
 
 if($present=="0"){
   if($hall=="movable"){
-    $sql = "update booking set staffid='$usname', code='$code',subname='$subname',year='$year',section='$section',venue='$room' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
+    $sql = "update booking set staffid='$usname', code='$code',year='$year',section='$section',venue='$room' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
     $query = mysqli_query($dbCon, $sql);
   }
   else{
-  $sql = "update booking set staffid='$usname', code='$code',subname='$subname',year='$year',section='$section' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
+  $sql = "update booking set staffid='$usname', code='$code',year='$year',section='$section' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
   $query = mysqli_query($dbCon, $sql);
 }
 

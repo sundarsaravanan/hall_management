@@ -20,10 +20,36 @@ function GetXmlHttpObject(){
     }
     return null;
 }
-var hall_ref=["d1hall","oldcse","newcse","movable"];
+var hall_ref=["d1hall","newcse","oldcse1","oldcse2"];
 var time_ref=["08:30:00","09:00:00","09:50:00","11:00:00","11:50:00","13:30:00","14:20:00","15:10:00","16:00:00"];
 var day_ref=["monday","tuesday","wednesday","thursday","friday","saturday"];
 var per=["test","I","II","III","IV","V","VI","VII","spcl"];
+
+function bas(name1){
+  for(var k=0;k<4;k++){
+
+      if (xmlhttp==null)
+      {
+            alert ("Your browser does not support AJAX!");
+            return;
+      }
+  var url="sample.php";
+  url=url+"?q="+hall_ref[k];
+  xmlhttp.onreadystatechange=function(){
+      if (xmlhttp.readyState==4 && xmlhttp.status == 200)
+        {
+          var myArr = JSON.parse(xmlhttp.responseText);
+        basi(myArr,hall_ref[k],name1);
+        }
+  }
+
+
+  xmlhttp.open("GET",url,false);
+  xmlhttp.send(null);
+  }
+
+
+}
 
 function basi(ar,halln,name1){
   var b=new Date();
@@ -87,6 +113,7 @@ if(a<b | b+7200000>a){
       document.getElementById(butname).disabled = true;
       document.getElementById(butname).setAttribute("time_ref",time_ref[i]);
       document.getElementById(butname).setAttribute("periodid",periodid);
+      document.getElementById(butname).setAttribute("title","Booked by "+ar[i]);
 
     }
 
@@ -95,64 +122,7 @@ if(a<b | b+7200000>a){
 }
   }
 }
-function bas(name1){
-  for(var k=0;k<4;k++){
 
-      if (xmlhttp==null)
-      {
-            alert ("Your browser does not support AJAX!");
-            return;
-      }
-  var url="sample.php";
-  url=url+"?q="+hall_ref[k];
-  xmlhttp.onreadystatechange=function(){
-      if (xmlhttp.readyState==4 && xmlhttp.status == 200)
-        {
-          var myArr = JSON.parse(xmlhttp.responseText);
-        basi(myArr,hall_ref[k],name1);
-        }
-  }
-
-
-  xmlhttp.open("GET",url,false);
-  xmlhttp.send(null);
-  }
-
-
-}
-
-
-function basi1(arr,dayn){
-
-  if(arr=="-1"){
-    for(var i=0;i<9;i++){
-      var butname=dayn.concat(i);
-
-        document.getElementById(butname).className="box";
-        document.getElementById(butname).disabled = true;
-
-  }
-  }else{
-
-  for(var i=0;i<9;i++){
-    var butname=dayn.concat(i);
-    var periodid="period".concat(i);
-    if(arr[i+2]==0){
-      document.getElementById(butname).innerHTML="Free";
-      document.getElementById(butname).setAttribute("perform", "book_lab.php");
-      document.getElementById(butname).setAttribute("periodid",periodid);
-
-    }
-    else {
-      document.getElementById(butname).className="blue";
-      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
-      document.getElementById(butname).setAttribute("perform", "cancel_lab.php");
-      document.getElementById(butname).setAttribute("periodid",periodid);
-
-      }
-    }
-  }
-}
 function bas_lab(){
   for(var k=0;k<6;k++){
 
@@ -175,6 +145,37 @@ function bas_lab(){
   xmlhttp.send(null);
   }
 }
+
+function basi1(arr,dayn){
+
+  if(arr=="-1"){
+    for(var i=0;i<9;i++){
+      var butname=dayn.concat(i);
+
+        document.getElementById(butname).className="box";
+        document.getElementById(butname).disabled = true;
+
+  }
+  }else{
+
+  for(var i=0;i<9;i++){
+    var butname=dayn.concat(i);
+    var periodid="period".concat(i);
+    if(arr[i+2]==0){
+      document.getElementById(butname).innerHTML="Free";
+      document.getElementById(butname).setAttribute("periodid",periodid);
+
+    }
+    else {
+      document.getElementById(butname).className="blue";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
+      document.getElementById(butname).setAttribute("periodid",periodid);
+
+      }
+    }
+  }
+}
+
 function checkperiod(e,dayn){
 
   var x=e.getAttribute("periodid");
@@ -304,7 +305,6 @@ function home_form()
 {
 
   code=document.getElementById("code").value;
-   subname=document.getElementById("subname").value;
 var type_sel = document.getElementsByName("year");
 for(var i = 0; i < type_sel.length; i++) {
 		   if(type_sel[i].checked == true) {
@@ -319,21 +319,15 @@ var type_sel = document.getElementsByName("section");
      		   }
      		 }
 if(code){
-
-  if(subname){
-
     if(year){
-
       if(section){
-
-
         if (xmlhttp==null)
         {
               alert ("Your browser does not support AJAX!");
               return;
         }
         var url="set.php";
-        url=url+"?code="+code+"&subname="+subname+"&year="+year+"&section="+section;
+        url=url+"?code="+code+"&year="+year+"&section="+section;
         url=url+"&sid="+Math.random();
         xmlhttp.onreadystatechange=function(){
         if (xmlhttp.readyState==4 && xmlhttp.status == 200)
@@ -346,10 +340,9 @@ if(code){
 
         window.location="table.php";
 
+      }
+      }
 
-      }
-      }
-    }
   }
   else{
       alert("Enter all details");
@@ -361,7 +354,9 @@ if(code){
 
 function datestore1(){
   var de=document.getElementById("datepicker").value;
-  var dt_to = $.datepicker.formatDate('dd/mm/yy', new Date(de));
+  var dt_to = $.datepicker.formatDate('dd-mm-yy', new Date(de));
+  alert(de);
+  alert(new Date(de));
   localStorage.setItem('dateval',dt_to);
 }
 
@@ -408,68 +403,6 @@ if(pass){
 
 
 
-
-
-function basi2(ar,halln,name1){
-  var b=new Date();
- b=b.getTime();
-  if(ar=="-1"){
-    for(var i=0;i<9;i++){
-      var butname=halln.concat(i);
-
-        document.getElementById(butname).className="box";
-        document.getElementById(butname).disabled = true;
-
-    }
-  }else{
-
-  for(var i=0;i<9;i++){
-    var butname=halln.concat(i);
-    var periodid=per[i];
-var a=localStorage.getItem('dateval');
- a=a.concat(" ");
- a=a.concat(time_ref[i]);
- a=new Date(a);
- a=a.getTime();
-
-
-if(a<b | b+7200000>a){
-  document.getElementById(butname).disabled = true;
-  document.getElementById(butname).style = "opacity:0.5;";
-
-}
-
-    if(ar[i]=='0'){
-      document.getElementById(butname).className="box";
-      document.getElementById(butname).innerHTML="Free";
-      document.getElementById(butname).disabled = true;
-
-    }
-    else if(ar[i]=='2'){
-      document.getElementById(butname).className="blue";
-      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
-      document.getElementById(butname).disabled = true;
-
-    }
-    else if(ar[i]==name1){
-      document.getElementById(butname).className="green";
-      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>";
-      document.getElementById(butname).disabled = true;
-
-    }
-
-    else{
-      document.getElementById(butname).className="red";
-      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span>";
-      document.getElementById(butname).disabled = true;
-
-    }
-
-
-
-}
-  }
-}
 function bas2(name1){
   for(var k=0;k<4;k++){
 
@@ -494,4 +427,54 @@ function bas2(name1){
   }
 
 
+}
+
+function basi2(ar,halln,name1){
+  var b=new Date();
+ b=b.getTime();
+  if(ar=="-1"){
+    for(var i=0;i<9;i++){
+      var butname=halln.concat(i);
+        document.getElementById(butname).className="box";
+        document.getElementById(butname).disabled = true;
+
+    }
+  }else{
+  for(var i=0;i<9;i++){
+    var butname=halln.concat(i);
+    var periodid=per[i];
+
+
+    if(ar[i]=='0'){
+      document.getElementById(butname).className="box";
+      document.getElementById(butname).innerHTML="Free";
+      document.getElementById(butname).disabled = true;
+
+    }
+    else if(ar[i]=='2'){
+      document.getElementById(butname).className="blue";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
+      document.getElementById(butname).disabled = true;
+
+    }
+    else if(ar[i]==name1){
+      document.getElementById(butname).className="green";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>";
+      document.getElementById(butname).disabled = true;
+
+    }
+
+    else{
+      document.getElementById(butname).className="red";
+      document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span>";
+      document.getElementById(butname).disabled = true;
+      document.getElementById(butname).setAttribute("title","Booked by "+ar[i]);
+
+
+    }
+
+
+
+}
+  }
 }

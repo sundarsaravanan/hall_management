@@ -216,7 +216,6 @@ function perop1(y,dayn){
   xmlhttp.onreadystatechange=function(){
   if (xmlhttp.readyState==4 && xmlhttp.status == 200)
   {
-        //  alert(xmlhttp.responseText);
   }
 
   }
@@ -358,8 +357,6 @@ if(code){
 function datestore1(){
   var de=document.getElementById("datepicker").value;
   var dt_to = $.datepicker.formatDate('dd-mm-yy', new Date(de));
-  alert(de);
-  alert(dt_to);
   localStorage.setItem('dateval',dt_to);
 }
 

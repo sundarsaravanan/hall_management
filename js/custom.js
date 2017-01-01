@@ -356,8 +356,9 @@ if(code){
 
 function datestore1(){
   var de=document.getElementById("datepicker").value;
-  var dt_to = $.datepicker.formatDate('dd-mm-yy', new Date(de));
-  localStorage.setItem('dateval',dt_to);
+  var sp=de.split("-");
+  var d=sp[1]+"-"+sp[0]+"-"+sp[2];
+  localStorage.setItem('dateval',d);
 }
 
 

@@ -163,12 +163,14 @@ function basi1(arr,dayn){
     var periodid="period".concat(i);
     if(arr[i+2]==0){
       document.getElementById(butname).innerHTML="Free";
+      document.getElementById(butname).setAttribute("perform", "book_lab.php");
       document.getElementById(butname).setAttribute("periodid",periodid);
 
     }
     else {
       document.getElementById(butname).className="blue";
       document.getElementById(butname).innerHTML="<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>";
+      document.getElementById(butname).setAttribute("perform", "cancel_lab.php");
       document.getElementById(butname).setAttribute("periodid",periodid);
 
       }
@@ -214,6 +216,7 @@ function perop1(y,dayn){
   xmlhttp.onreadystatechange=function(){
   if (xmlhttp.readyState==4 && xmlhttp.status == 200)
   {
+        //  alert(xmlhttp.responseText);
   }
 
   }
@@ -356,7 +359,7 @@ function datestore1(){
   var de=document.getElementById("datepicker").value;
   var dt_to = $.datepicker.formatDate('dd-mm-yy', new Date(de));
   alert(de);
-  alert(new Date(de));
+  alert(dt_to);
   localStorage.setItem('dateval',dt_to);
 }
 
@@ -477,4 +480,42 @@ function basi2(ar,halln,name1){
 
 }
   }
+}
+
+function remarks(n) {
+             if (xmlhttp==null)
+              {
+                    alert ("Your browser does not support AJAX!");
+                    return;
+              }
+          var url="remarks.php";
+          url=url+"?name="+n;
+          xmlhttp.onreadystatechange=function(){
+              if (xmlhttp.readyState==4 && xmlhttp.status == 200)
+                {
+                  var arr=JSON.parse(xmlhttp.responseText);
+                  getRemarks(arr,n);
+                }
+          }
+          xmlhttp.open("GET",url,true);
+          xmlhttp.send(null);
+
+}
+
+function getRemarks(a) {
+        for (var i=0;i<a.length;i++){
+                var x=prompt("Remarks for '" +a[i][3]+ "' used on '"+a[i][1]+"' at '"+ a[i][2]+ "' period for '" +a[i][5]+"' year ' "+ a[i][6] +"' section");
+                if(x){
+                var url="remarksUpdate.php";
+                url=url+"?remarks="+x+"&id="+a[i][0];
+                xmlhttp.onreadystatechange=function(){
+                    if (xmlhttp.readyState==4 && xmlhttp.status == 200)
+                      {
+
+                      }
+                }
+                xmlhttp.open("GET",url,true);
+                xmlhttp.send(null);
+        }
+        }
 }

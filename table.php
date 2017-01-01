@@ -31,7 +31,7 @@ date_default_timezone_set('Asia/Calcutta');
   $(document).ready(function() {
     $("#datepicker").datepicker({ minDate: 0 ,
         beforeShowDay: noSunday ,maxDate: 20,
-       dateFormat: 'dd-mm-yy'
+       dateFormat: 'mm-dd-yy'
 
 });
   });
@@ -81,7 +81,7 @@ date_default_timezone_set('Asia/Calcutta');
       <div class="col-lg-5 col-lg-offset-7">
         <form  action="table.php"  method="post" class="form-horizontal" role="form" enctype="multipart/form-data" >
             <div class="col-lg-5 col-lg-offset-2">
-             <input  autocomplete="off" id="datepicker" class="form-control" name="date" placeholder="Choose Date" value="<?php echo $_SESSION['date']?>">
+             <input  autocomplete="off" id="datepicker" class="form-control" name="date" placeholder="Choose Date" value="<?php echo $_SESSION['date']?>" readonly='true'>
 </div>
 <div class="col-lg-3 col-lg-offset-1">
             <button type="submit" class="btn btn-primary" style="font-size:20px;" onclick="datestore1();">

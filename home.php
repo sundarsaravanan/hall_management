@@ -25,6 +25,8 @@ date_default_timezone_set('Asia/Calcutta');
 	<title>Home</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<script type="text/javascript" src="js/custom.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/for_index.css">
+
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -53,9 +55,6 @@ date_default_timezone_set('Asia/Calcutta');
         label {
           display: inline-block;
           width: 5em;
-	  font-size: 28px;
-	  background-color: #fff;
-	  height:100px;
         }
         </style>
 
@@ -83,6 +82,9 @@ date_default_timezone_set('Asia/Calcutta');
 		<div class="col-sm-2 col-sm-offset-1">
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="font-size:20px;" >
 	                  Book
+	                </button>
+			<button type="button" class="btn btn-primary" onclick="remarks('<?php echo $usname;?>')" style="font-size:20px;" >
+	                  Remarks
 	                </button>
 
 		</div>

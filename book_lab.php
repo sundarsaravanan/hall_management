@@ -7,6 +7,7 @@
         $hall=$_SESSION["hall"];
         $sql = "update lab set $periodid=2 where day='$day' and hall='$hall'";
       	$query = mysqli_query($dbCon, $sql);
+        echo $sql;
   }
   else {
         header("Location: index.php");

@@ -6,6 +6,7 @@ if (isset($_SESSION['id'])) {
 	$day=$_POST["dayn"];
 	$hall=$_SESSION["hall"];
 	$sql1 = "update lab set $periodid=0 where day='$day' and hall='$hall'";
+	echo $sql1;
 	$query1 = mysqli_query($dbCon, $sql1);
 }
 else {

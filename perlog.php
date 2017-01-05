@@ -85,11 +85,11 @@ while($row = mysqli_fetch_array($query)){
 
 	echo "<td> $row[6] </td>";
 	if($row[4]=="newcse"){
-		echo "<td> New Cse Lab </td>";
+		echo "<td>Cse Lab 2</td>";
 
 	}
 	else if ($row[4]=="oldcse1") {
-		echo "<td> Old Cse Lab 1&2</td>";
+		echo "<td> Cse Lab 1(1&2)</td>";
 
 	}
 	else if ($row[4]=="d1hall") {
@@ -97,7 +97,7 @@ while($row = mysqli_fetch_array($query)){
 
 	}
 	else if ($row[4]=="oldcse2") {
-		echo "<td> Old Cse Lab 3&4</td>";
+		echo "<td>Cse Lab 1(3&4)</td>";
 
 	}
 	echo "<td> $row[7] </td>";

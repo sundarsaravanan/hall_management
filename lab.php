@@ -46,10 +46,10 @@ if (!empty($_POST['hall'])) {
             <div class="col-sm-6">
               <select class="form-control" name="hall" >
                   <option <?php if($_SESSION['hall']=="oldcse") echo 'selected="selected"'; ?>>Select Hall</option>
-                  <option value="newcse" <?php if($_SESSION['hall']=="newcse") echo 'selected="selected"'; ?>>Newcse Lab</option>
+                  <option value="newcse" <?php if($_SESSION['hall']=="newcse") echo 'selected="selected"'; ?>>Cse Lab 2</option>
                   <option value="d1hall" <?php if($_SESSION['hall']=="d1hall") echo 'selected="selected"'; ?>>D1 Hall</option>
-                  <option value="oldcse1" <?php if($_SESSION['hall']=="oldcse1") echo 'selected="selected"'; ?>>Oldcse Lab 1&2</option>
-                  <option value="oldcse2" <?php if($_SESSION['hall']=="oldcse2") echo 'selected="selected"'; ?>>Oldcse Lab 3&4</option>
+                  <option value="oldcse1" <?php if($_SESSION['hall']=="oldcse1") echo 'selected="selected"'; ?>>Cse Lab 1(1&2)</option>
+                  <option value="oldcse2" <?php if($_SESSION['hall']=="oldcse2") echo 'selected="selected"'; ?>>Cse Lab 1(3&4)</option>
 					      </select>
                </div>
           <div class="col-sm-6">

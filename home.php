@@ -133,7 +133,7 @@ date_default_timezone_set('Asia/Calcutta');
 	                    </tr>
 
 	                    <tr>
-	                      <td class="tab_row"><h3><center>New Cse Lab</center></h3></td>
+	                      <td class="tab_row"><h3><center>Cse Lab 2</center></h3></td>
 	                      <td><button class="box" id="newcse0" onclick="checkperiod1(this);">-</button></td>
 	                      <td><button class="box" id="newcse1" onclick="checkperiod1(this);">-</button></td>
 	                        <td><button class="box" id="newcse2" onclick="checkperiod1(this);">-</button></td>
@@ -145,7 +145,7 @@ date_default_timezone_set('Asia/Calcutta');
 	                                    <td><button class="box" id="newcse8" onclick="checkperiod1(this);">-</button></td>
 	                    </tr>
 			    <tr>
-	                      <td class="tab_row"><h3><center>Old Cse Lab 1&2</center></h3></td>
+	                      <td class="tab_row"><h3><center>Cse Lab 1 (1&2)</center></h3></td>
 	                      <td><button class="box" id="oldcse10" onclick="checkperiod1(this);">-</button></td>
 	                      <td><button class="box" id="oldcse11" onclick="checkperiod1(this);">-</button></td>
 	                        <td><button class="box" id="oldcse12" onclick="checkperiod1(this);">-</button></td>
@@ -156,7 +156,7 @@ date_default_timezone_set('Asia/Calcutta');
 	                                  <td><button  class="box" id="oldcse17" onclick="checkperiod1(this);">-</button></td>
 	                                    <td><button class="box" id="oldcse18" onclick="checkperiod1(this);">-</button></td>
 	                    </tr><tr>
-	                      <td class="tab_row"><h3><center>Old Cse Lab 3&4</center></h3></td>
+	                      <td class="tab_row"><h3><center>Cse Lab 1(3&4)</center></h3></td>
 	                      <td><button class="box" id="oldcse20" onclick="checkperiod1(this);">-</button></td>
 	                      <td><button class="box" id="oldcse21" onclick="checkperiod1(this);">-</button></td>
 	                        <td><button class="box" id="oldcse22" onclick="checkperiod1(this);">-</button></td>

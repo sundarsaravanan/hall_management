@@ -15,8 +15,9 @@ if (isset($_SESSION['id'])) {
 	$row= mysqli_fetch_row($query);
 	$present = $row[0];
 	if($present==$usname){
-		$sql1 = "update booking set staffid='0', code='0',subname='0',year='0',section='0' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
+		$sql1 = "update booking set staffid='0', code='0',year='0',section='0' where date='$date' and lcd_type='$hall' and periodid='$periodid'";
 		$query1 = mysqli_query($dbCon, $sql1);
+		echo $sql1;
 	header("Location: table.php");
 	}
 

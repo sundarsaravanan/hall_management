@@ -289,6 +289,12 @@ function perop(y,roo){
       e.disabled = true;
       alert("It was booked by another staff at same time.");
       }
+    if(action=="book_period.php"){
+            alert("Booked Successfully");
+    }
+    if(action=="cancel_period.php"){
+            alert("Cancelled");
+    }
     }
   }
 

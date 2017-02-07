@@ -1,20 +1,19 @@
 <?php
 session_start();
-if (isset($_SESSION['id'])  && $_SESSION['role']=="ap") {
-		$uid = $_SESSION['id'];
-		$usname = $_SESSION['usname'];
-		$date=$_SESSION['date'];
-		include_once("dbconnect.php");
+if (isset($_SESSION['id']) && $_SESSION['role']=="technician") {
+
+	$uid = $_SESSION['id'];
+	$usname = $_SESSION['usname'];
+	include_once("dbconnect.php");
 }
 else{
 	 header("Location: index.php");
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Personal Log</title>
+	<title>Log</title>
   <link rel="stylesheet" type="text/css" href="css/custom.css">
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <script type="text/javascript" src="js/custom.js"></script>
@@ -31,35 +30,35 @@ else{
 	            <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;margin-right:20px;" onclick="window.location='settings.php'">  <span class="glyphicon glyphicon-cog" aria-hidden="true"
 	                style="font-size: 20px;"></span>
 	            </button>
-		    <button type="button" class="btn btn-primary " style="float:right;margin-top:30px;margin-right:20px;" onclick="window.location='home.php'">  <span class="glyphicon glyphicon-home" aria-hidden="true"
-		       style="font-size: 20px;"></span>
-		   </button>
 	          </div>
 	        </div>
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1" style="margin-top:10px;">
+
         <table class="logtab">
           <thead>
             <tr>
-              <th width="5%">SNo.</th>
+              <th width="3%">SNo.</th>
               <th width="10%">Date</th>
-              <th width="9%">Period</th>
-              <th width="10%">Subject Code</th>
-              <th width="15%">Venue</th>
-              <th width="8%">Year</th>
-              <th width="8%">Section</th>
-	      <th width="40%">Remarks</th>
+              <th width="17%">Name</th>
+              <th width="5%">Period</th>
+              <th width="15%">Subject Code or Others</th>
+              <th width="13%">Venue</th>
+              <th width="5%">Year</th>
+              <th width="5%">Section</th>
+	      <th width="37%">Remarks</th>
             <tr>
           </thead>
             <tbody>
 <?php
-	$sql="select * from booking where staffid='$usname' order by date desc";
+	$sql="select * from booking where not staffid='0' and not staffid='2' order by date desc";
 	$query = mysqli_query($dbCon, $sql);
 	$k=1;
 	while($row = mysqli_fetch_array($query)){
 		echo '<tr>';
 		echo "<td>$k. </td>";
 		echo "<td> $row[1] </td>";
+		echo "<td> $row[5] </td>";
 		if($row[3]=="test"){
 			echo "<td> 8.30 - 9.00 </td>";
 		}
@@ -69,6 +68,7 @@ else{
 		else{
 			echo "<td> $row[3] </td>";
 		}
+
 
 		echo "<td> $row[6] </td>";
 		if($row[4]=="newcse"){
@@ -88,17 +88,16 @@ else{
 
 		}
 		echo "<td> $row[7] </td>";
-
 		echo "<td> $row[8] </td>";
 		echo "<td> $row[9] </td>";
 		echo '</tr>';
 		$k++;
 	}
 ?>
-            		</tbody>
-          		</table>
+            				</tbody>
+          			</table>
     			</div>
-			</div>
+		</div>
 	</div>
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/in_body.js"></script>

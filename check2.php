@@ -27,7 +27,7 @@ if (isset($_SESSION['id'])) {
         $day_ref=array("sunday","monday","tuesday","wednesday","thursday","friday","saturday");
         $day = date('w', $timestamp);
         if($flag==0){
-  	    	header("Location: home.php");
+  	    	header("Location: cancel.php");
   	}
   	else{
                 $hall=array("d1hall","newcse","oldcse1","oldcse2");
@@ -41,7 +41,7 @@ if (isset($_SESSION['id'])) {
                                   $query = mysqli_query($dbCon, $sql);
                           }
                   }
-  	               header("Location: home.php");
+  	             header("Location: home.php");
         }
 	}
 	else {

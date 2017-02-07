@@ -1,5 +1,6 @@
 <?php
 session_start();
+$er=" ";
 if (isset($_SESSION['id'])) {
 	$uid = $_SESSION['id'];
 	$usname = $_SESSION['usname'];
@@ -26,6 +27,9 @@ elseif (isset($_POST['username'])) {
 		$_SESSION['usname']=$row[4];
 		header("Location: home.php");
 	}
+	else{
+		$er="*Enter valid credentials";
+	}
 }
 ?>
 
@@ -42,34 +46,38 @@ elseif (isset($_POST['username'])) {
 		<div class="row"><center><br><h3 style="letter-spacing:5px;font-family:serif;font-size:25px;">Department   of  Computer Science and Engineering<br><br>LCD Portal</h3></center></div>
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4" style="margin-top:30px;padding-bottom:20px;padding-top:10px;border: 1px solid black;border-radius: 20px;		box-shadow: 5px 5px 20px 4px #9C9C9C; background-color:#f5cc85">
-						<form id="form" action="index.php" method="post" class="form-horizontal col-sm-8 col-sm-offset-2" enctype="multipart/form-data" name="login_form" role="form" >
-							<div class="form-group">
-							 	<div class="col-sm-12">
-								 	<h3 style="letter-spacing:5px;font-family:serif;font-size:25px;"><center>Login</center></h3>
-						   		</div>
-							</div>
-							<hr>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<center><input id="textbox1"  autocomplete="off" type="text"  class="form-control" placeholder="Staff id"name="username" onblur="user1(document.getElementById('textbox1').value)"></center>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<center><input id="textbox" type="password" class="form-control" placeholder="Password" name="password"></center>
-								</div>
-							</div>
-							<hr>
-							<div class="form-group">
-								<button type="submit" class="col-sm-4 col-sm-offset-1 btn btn-primary">
-									<i class="fa fa-btn fa-sign-in"></i> Login
-								</button>
-								<button type="button" class="col-sm-4 col-sm-offset-1 btn btn-primary" onclick="staff_per();">
-									<i class="fa fa-btn fa-sign-in"></i> Register
-								</button>
-							</div>
-						</form>
+				<form id="form" action="index.php" method="post" class="form-horizontal col-sm-8 col-sm-offset-2" enctype="multipart/form-data" name="login_form" role="form" >
+					<div class="form-group">
+					 	<div class="col-sm-12">
+						 	<h3 style="letter-spacing:5px;font-family:serif;font-size:25px;"><center>Login</center></h3>
+				   		</div>
+					</div>
+					<hr>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<center><input id="textbox1"  autocomplete="off" type="text"  class="form-control" placeholder="Staff id"name="username"  required></center>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<center><input id="textbox" type="password" class="form-control" placeholder="Password" name="password" required></center>
+						</div>
+					</div>
+					<hr>
+					<div class="form-group">
+						<button type="submit" class="col-sm-4 col-sm-offset-1 btn btn-primary">
+							<i class="fa fa-btn fa-sign-in"></i> Login
+						</button>
+						<button type="button" class="col-sm-4 col-sm-offset-1 btn btn-primary" onclick="staff_per();">
+							<i class="fa fa-btn fa-sign-in"></i> Register
+						</button>
+					</div>
+					<div class="alert">
+		  				<strong><?php echo $er; ?></strong>
+					</div>
+				</form>
 			</div>
+
 		</div>
 	</div>
 	<script src="js/bootstrap.min.js"></script>

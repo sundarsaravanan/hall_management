@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if (isset($_SESSION['id'])) {
+  if (isset($_SESSION['id'])  && $_SESSION['role']=="ap") {
       	include_once("dbconnect.php");
         $remarks=$_GET['remarks'];
         $id=$_GET['id'];
